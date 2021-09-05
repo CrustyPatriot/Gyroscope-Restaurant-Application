@@ -12,17 +12,17 @@ namespace GyroScope.Data.Entrees
     /// </summary>
     public class LeoLambGyro
     {
-        public DonerMeat Meat = DonerMeat.Lamb;
-        public bool Pita = true;
-        public bool Tomato = true;
-        public bool Onion = true;
-        public bool EggPlant = true;
-        public bool Lettuce = true;
-        public bool MintChutney = true;
+        public DonerMeat Meat { get; set; } = DonerMeat.Lamb;
+        public bool Pita { get; set; } = true;
+        public bool Tomato { get; set; } = true;
+        public bool Onion { get; set; } = true;
+        public bool EggPlant { get; set; } = true;
+        public bool Lettuce { get; set; } = true;
+        public bool MintChutney { get; set; } = true;
 
-        public bool Tzatziki = false;
-        public bool Peppers = false;
-        public bool WingSauce = false;
+        public bool Tzatziki { get; set; } = false;
+        public bool Peppers { get; set; } = false;
+        public bool WingSauce { get; set; } = false;
 
         public decimal Price => 5.75m;
 

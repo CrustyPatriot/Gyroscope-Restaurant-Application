@@ -12,17 +12,17 @@ namespace GyroScope.Data.Entrees
     /// </summary>
     public class VirgoClassicGyro
     {
-        public DonerMeat Meat = DonerMeat.Pork;
-        public bool Pita = true;
-        public bool Tomato = true;
-        public bool Onion = true;
-        public bool Lettuce = true;
-        public bool Tzatziki = true;
+        public DonerMeat Meat { get; set; } = DonerMeat.Pork;
+        public bool Pita { get; set; } = true;
+        public bool Tomato { get; set; } = true;
+        public bool Onion { get; set; } = true;
+        public bool Lettuce { get; set; } = true;
+        public bool Tzatziki { get; set; } = true;
 
-        public bool Peppers = false;
-        public bool WingSauce = false;
-        public bool EggPlant = false;
-        public bool MintChutney = false;
+        public bool Peppers { get; set; } = false;
+        public bool WingSauce { get; set; } = false;
+        public bool EggPlant { get; set; } = false;
+        public bool MintChutney { get; set; } = false;
 
         public decimal Price => 5.50m;
 

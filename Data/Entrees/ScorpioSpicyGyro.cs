@@ -12,7 +12,7 @@ namespace GyroScope.Data.Entrees
     /// </summary>
     public class ScorpioSpicyGyro
     {
-        public DonerMeat Meat = DonerMeat.Chicken;
+        public DonerMeat Meat { get; set; } = DonerMeat.Chicken;
         public bool Pita{get; set;} = true;
         public bool Peppers { get; set; } = true;
         public bool Onion { get; set; } = true;
