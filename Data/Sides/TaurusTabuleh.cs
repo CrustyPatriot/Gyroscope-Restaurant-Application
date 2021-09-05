@@ -10,7 +10,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// A class to represent a side of Tarus Tabuleh.
     /// </summary>
-    public class TarusTabuleh
+    public class TaurusTabuleh
     {
         /// <summary>
         /// The size of the Tarus Tabuleh.
