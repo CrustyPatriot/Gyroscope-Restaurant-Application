@@ -16,6 +16,6 @@ namespace GyroScope.Data.Entrees
 
         public uint Calories => 726;
 
-        public IEnumerable<string> CustomOrder = Enumerable.Empty<string>();
+        public IEnumerable<string> SpecialInstructions = Enumerable.Empty<string>();
     }
 }

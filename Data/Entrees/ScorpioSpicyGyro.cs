@@ -29,7 +29,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property that shows a string of the customized order.
         /// </summary>
-        public IEnumerable<string> CustomOrder
+        public IEnumerable<string> SpecialInstructions
         {
             get
             {
