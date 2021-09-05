@@ -13,16 +13,16 @@ namespace GyroScope.Data.Entrees
     public class ScorpioSpicyGyro
     {
         public DonerMeat Meat = DonerMeat.Chicken;
-        public bool Pita = true;
-        public bool Peppers = true;
-        public bool Onion = true;
-        public bool Lettuce = true;
-        public bool WingSauce = true;
+        public bool Pita{get; set;} = true;
+        public bool Peppers { get; set; } = true;
+        public bool Onion { get; set; } = true;
+        public bool Lettuce { get; set; } = true;
+        public bool WingSauce { get; set; } = true;
 
-        public bool Tomato = false;
-        public bool Tzatziki = false;
-        public bool EggPlant = false;
-        public bool MintChutney = false;
+        public bool Tomato { get; set; } = false;
+        public bool Tzatziki { get; set; } = false;
+        public bool EggPlant { get; set; } = false;
+        public bool MintChutney { get; set; } = false;
 
         public decimal Price => 6.20m;
 
