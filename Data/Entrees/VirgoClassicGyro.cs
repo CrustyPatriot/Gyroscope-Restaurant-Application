@@ -12,7 +12,7 @@ namespace GyroScope.Data.Entrees
     /// </summary>
     public class VirgoClassicGyro
     {
-        public DonorMeat Meat = DonorMeat.Pork;
+        public DonerMeat Meat = DonerMeat.Pork;
         public bool Pita = true;
         public bool Tomato = true;
         public bool Onion = true;
@@ -33,13 +33,13 @@ namespace GyroScope.Data.Entrees
         {
             get
             {
-                if (Meat != DonorMeat.Pork)
+                if (Meat != DonerMeat.Pork)
                 {
-                    if (Meat == DonorMeat.Beef)
+                    if (Meat == DonerMeat.Beef)
                     {
                         yield return "Use beef";
                     }
-                    if (Meat == DonorMeat.Chicken)
+                    if (Meat == DonerMeat.Chicken)
                     {
                         yield return "Use chicken";
                     }
@@ -80,19 +80,19 @@ namespace GyroScope.Data.Entrees
             {
                 uint calorieSum = 0; 
 
-                if (Meat == DonorMeat.Pork)
+                if (Meat == DonerMeat.Pork)
                 {
                     calorieSum += 187;
                 }
-                else if (Meat == DonorMeat.Lamb)
+                else if (Meat == DonerMeat.Lamb)
                 {
                     calorieSum += 151;
                 }
-                else if (Meat == DonorMeat.Chicken)
+                else if (Meat == DonerMeat.Chicken)
                 {
                     calorieSum += 113;
                 }
-                else if (Meat == DonorMeat.Beef)
+                else if (Meat == DonerMeat.Beef)
                 {
                     calorieSum += 181;
                 }
