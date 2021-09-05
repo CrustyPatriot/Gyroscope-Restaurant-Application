@@ -21,7 +21,7 @@ namespace GyroScope.Data.Entrees
 
         public bool Tomato { get; set; } = false;
         public bool Tzatziki { get; set; } = false;
-        public bool EggPlant { get; set; } = false;
+        public bool Eggplant { get; set; } = false;
         public bool MintChutney { get; set; } = false;
 
         public decimal Price => 6.20m;
@@ -124,7 +124,7 @@ namespace GyroScope.Data.Entrees
                 {
                     calorieSum += 15;
                 }
-                else if (EggPlant == true)
+                else if (Eggplant == true)
                 {
                     calorieSum += 47;
                 }

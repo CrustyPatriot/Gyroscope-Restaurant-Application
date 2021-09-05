@@ -16,7 +16,7 @@ namespace GyroScope.Data.Entrees
         public bool Pita { get; set; } = true;
         public bool Tomato { get; set; } = true;
         public bool Onion { get; set; } = true;
-        public bool EggPlant { get; set; } = true;
+        public bool Eggplant { get; set; } = true;
         public bool Lettuce { get; set; } = true;
         public bool MintChutney { get; set; } = true;
 
@@ -60,7 +60,7 @@ namespace GyroScope.Data.Entrees
                 {
                     yield return "Hold onion";
                 }
-                else if (EggPlant == false)
+                else if (Eggplant == false)
                 {
                     yield return "Hold eggplant";
                 }
@@ -128,7 +128,7 @@ namespace GyroScope.Data.Entrees
                 {
                     calorieSum += 15;
                 }
-                else if (EggPlant == true)
+                else if (Eggplant == true)
                 {
                     calorieSum += 47;
                 }
