@@ -16,7 +16,7 @@ namespace GyroScope.Data.Sides
         /// The size of the Ares Fries.
         /// \
         /// </summary>
-        public Size Size { get; set; }
+        public Size Size { get; set; } = Size.Small;
 
         /// <summary>
         /// The price of the Ares Fries.
