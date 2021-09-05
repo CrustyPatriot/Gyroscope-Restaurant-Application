@@ -55,7 +55,7 @@ namespace GyroScope.Data.Sides
                     case Size.Large:
                         return 360;
                     default:
-                        throw new NotImplementedException($"Unknown Calorie amount:  {Calories}");
+                        throw new NotImplementedException($"Unknown Calorie amount");
                 }
             }
         }
