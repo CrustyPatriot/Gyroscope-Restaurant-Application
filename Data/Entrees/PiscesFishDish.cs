@@ -12,11 +12,20 @@ namespace GyroScope.Data.Entrees
     /// </summary>
     public class PiscesFishDish : Entree
     {
+        /// <summary>
+        /// The price for the pisces fish dish.
+        /// </summary>
         public override decimal Price => 5.99m;
 
+        /// <summary>
+        /// The calories for the pisces fish dish.
+        /// </summary>
         public override uint Calories => 726;
 
-        public IEnumerable<string> SpecialInstructions
+        /// <summary>
+        /// The special instructions for the pisces fish dish.
+        /// </summary>
+        public override IEnumerable<string> SpecialInstructions
         {
             get
             {
