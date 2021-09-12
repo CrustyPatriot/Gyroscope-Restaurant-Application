@@ -10,18 +10,12 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// A class to represent a side of Gemini Stuffed Grape Leaves.
     /// </summary>
-    public class GeminiStuffedGrapeLeaves
+    public class GeminiStuffedGrapeLeaves : Side
     {
-        /// <summary>
-        /// The size of the Gemini stuffed grape leaves.
-        /// \
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
-
         /// <summary>
         /// The price of the Gemini stuffed grape leaves.
         /// </summary>
-        public decimal Price
+        public override decimal Price
         {
             get
             {
@@ -42,7 +36,7 @@ namespace GyroScope.Data.Sides
         /// <summary>
         /// The calories of the Gemini stuffed grape leaves.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

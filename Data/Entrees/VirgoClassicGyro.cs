@@ -10,21 +10,25 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// A class to represent the Virgo Classic Gyro.
     /// </summary>
-    public class VirgoClassicGyro
+    public class VirgoClassicGyro : Gyro
     {
-        public DonerMeat Meat { get; set; } = DonerMeat.Pork;
-        public bool Pita { get; set; } = true;
-        public bool Tomato { get; set; } = true;
-        public bool Onion { get; set; } = true;
-        public bool Lettuce { get; set; } = true;
-        public bool Tzatziki { get; set; } = true;
+        /// <summary>
+        /// Constructor for the virgo classic gyro.
+        /// </summary>
+        public VirgoClassicGyro()
+        {
+            Meat = DonerMeat.Pork;
+            Pita = true;
+            Tomato = true;
+            Onion = true;
+            Lettuce = true;
+            Tzatziki = true;
+        }
 
-        public bool Peppers { get; set; } = false;
-        public bool WingSauce { get; set; } = false;
-        public bool Eggplant { get; set; } = false;
-        public bool MintChutney { get; set; } = false;
-
-        public decimal Price => 5.50m;
+        /// <summary>
+        /// The price of the virgo classic gyro.
+        /// </summary>
+        public override decimal Price => 5.50m;
 
         /// <summary>
         /// Property that shows a string of the customized order.
@@ -74,7 +78,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property that calculates the amount of total calories.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

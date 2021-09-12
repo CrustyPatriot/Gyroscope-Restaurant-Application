@@ -8,20 +8,14 @@ using GyroScope.Data.Enums;
 namespace GyroScope.Data.Sides
 {
     /// <summary>
-    /// A class to represent a side of Ares Fries.
+    /// A class to represent a side of Aries Fries.
     /// </summary>
-    public class AriesFries
+    public class AriesFries : Side
     {
-        /// <summary>
-        /// The size of the Ares Fries.
-        /// \
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
-
         /// <summary>
         /// The price of the Ares Fries.
         /// </summary>
-        public decimal Price
+        public override decimal Price
         {
             get
             {
@@ -42,7 +36,7 @@ namespace GyroScope.Data.Sides
         /// <summary>
         /// The calories of the Ares Fries.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

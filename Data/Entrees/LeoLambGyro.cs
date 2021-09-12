@@ -10,21 +10,28 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// A class to represent the Leo Lamb Gyro.
     /// </summary>
-    public class LeoLambGyro
+    public class LeoLambGyro : Gyro
     {
-        public DonerMeat Meat { get; set; } = DonerMeat.Lamb;
-        public bool Pita { get; set; } = true;
-        public bool Tomato { get; set; } = true;
-        public bool Onion { get; set; } = true;
-        public bool Eggplant { get; set; } = true;
-        public bool Lettuce { get; set; } = true;
-        public bool MintChutney { get; set; } = true;
+        Gyro leoLambGyro = new LeoLambGyro();
 
-        public bool Tzatziki { get; set; } = false;
-        public bool Peppers { get; set; } = false;
-        public bool WingSauce { get; set; } = false;
+        /// <summary>
+        /// Constructor for the leo lamb gyro.
+        /// </summary>
+        public LeoLambGyro()
+        {
+            leoLambGyro.Meat = DonerMeat.Lamb;
+            leoLambGyro.Pita = true;
+            leoLambGyro.Tomato = true;
+            leoLambGyro.Onion = true;
+            leoLambGyro.Eggplant = true;
+            leoLambGyro.Lettuce = true;
+            leoLambGyro.MintChutney = true;
+        }
 
-        public decimal Price => 5.75m;
+        /// <summary>
+        /// The price of the leo lamb gyro.
+        /// </summary>
+        public override decimal Price => 5.75m;
 
         /// <summary>
         /// Property that shows a string of the customized order.
@@ -78,7 +85,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property that calculates the amount of total calories.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

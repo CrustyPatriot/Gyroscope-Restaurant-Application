@@ -10,7 +10,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// A class to represent the Pisces Fish dish.
     /// </summary>
-    public class PicesFishDish
+    public class PiscesFishDish
     {
         public decimal Price => 5.99m;
 

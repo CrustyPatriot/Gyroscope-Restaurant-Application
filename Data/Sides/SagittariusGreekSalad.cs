@@ -10,18 +10,12 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// A class to represent a side of Sagittarius greek salad.
     /// </summary>
-    public class SagittariusGreekSalad
+    public class SagittariusGreekSalad : Side
     {
-        /// <summary>
-        /// The size of the Sagittarius greek salad.
-        /// \
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
-
         /// <summary>
         /// The price of the Sagittarius greek salad.
         /// </summary>
-        public decimal Price
+        public override decimal Price
         {
             get
             {
@@ -42,7 +36,7 @@ namespace GyroScope.Data.Sides
         /// <summary>
         /// The calories of the Sagittarius greek salad.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

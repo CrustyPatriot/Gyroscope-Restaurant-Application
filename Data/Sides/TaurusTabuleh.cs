@@ -10,18 +10,12 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// A class to represent a side of Tarus Tabuleh.
     /// </summary>
-    public class TaurusTabuleh
+    public class TaurusTabuleh : Side
     {
-        /// <summary>
-        /// The size of the Tarus Tabuleh.
-        /// \
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
-
         /// <summary>
         /// The price of the Tarus Tabuleh.
         /// </summary>
-        public decimal Price
+        public override decimal Price
         {
             get
             {
@@ -42,7 +36,7 @@ namespace GyroScope.Data.Sides
         /// <summary>
         /// The calories of the Tarus Tabuleh.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

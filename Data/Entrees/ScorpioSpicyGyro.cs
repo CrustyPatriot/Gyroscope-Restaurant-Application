@@ -10,21 +10,25 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// A class to represent the Scorpio Spicy Gyro.
     /// </summary>
-    public class ScorpioSpicyGyro
+    public class ScorpioSpicyGyro : Gyro
     {
-        public DonerMeat Meat { get; set; } = DonerMeat.Chicken;
-        public bool Pita{get; set;} = true;
-        public bool Peppers { get; set; } = true;
-        public bool Onion { get; set; } = true;
-        public bool Lettuce { get; set; } = true;
-        public bool WingSauce { get; set; } = true;
+        /// <summary>
+        /// Constructor for the scorpio spicy gyro.
+        /// </summary>
+        public ScorpioSpicyGyro()
+        {
+            Meat = DonerMeat.Chicken;
+            Pita = true;
+            Peppers = true;
+            Onion = true;
+            Lettuce = true;
+            WingSauce = true;
+        }
 
-        public bool Tomato { get; set; } = false;
-        public bool Tzatziki { get; set; } = false;
-        public bool Eggplant { get; set; } = false;
-        public bool MintChutney { get; set; } = false;
-
-        public decimal Price => 6.20m;
+        /// <summary>
+        /// The price of the scorpio spicy gyro.
+        /// </summary>
+        public override decimal Price => 6.20m;
 
         /// <summary>
         /// Property that shows a string of the customized order.
@@ -74,7 +78,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property that calculates the amount of total calories.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
