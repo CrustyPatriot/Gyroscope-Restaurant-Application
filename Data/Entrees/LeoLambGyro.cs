@@ -12,20 +12,18 @@ namespace GyroScope.Data.Entrees
     /// </summary>
     public class LeoLambGyro : Gyro
     {
-        Gyro leoLambGyro = new LeoLambGyro();
-
         /// <summary>
         /// Constructor for the leo lamb gyro.
         /// </summary>
         public LeoLambGyro()
         {
-            leoLambGyro.Meat = DonerMeat.Lamb;
-            leoLambGyro.Pita = true;
-            leoLambGyro.Tomato = true;
-            leoLambGyro.Onion = true;
-            leoLambGyro.Eggplant = true;
-            leoLambGyro.Lettuce = true;
-            leoLambGyro.MintChutney = true;
+            Meat = DonerMeat.Lamb;
+            Pita = true;
+            Tomato = true;
+            Onion = true;
+            Eggplant = true;
+            Lettuce = true;
+            MintChutney = true;
         }
 
         /// <summary>
@@ -36,7 +34,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Property that shows a string of the customized order.
         /// </summary>
-        public IEnumerable<string> SpecialInstructions
+        public override IEnumerable<string> SpecialInstructions
         {
             get
             {

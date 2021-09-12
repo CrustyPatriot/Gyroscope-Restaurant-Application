@@ -37,6 +37,6 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// The ingredient honey.
         /// </summary>
-        public bool Honey => true;
+        public bool Honey { get; set; } = true;
     }
 }

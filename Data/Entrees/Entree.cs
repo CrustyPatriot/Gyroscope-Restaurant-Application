@@ -20,5 +20,10 @@ namespace GyroScope.Data.Entrees
         /// The calories of the entree.
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Special instructions for each 
+        /// </summary>
+        public abstract IEnumerable<string> SpecialInstructions { get; }
     }
 }
