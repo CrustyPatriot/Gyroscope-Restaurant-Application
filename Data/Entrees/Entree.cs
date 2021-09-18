@@ -24,6 +24,6 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Special instructions for each 
         /// </summary>
-        public abstract IEnumerable<string> SpecialInstructions { get; }
+        public virtual IEnumerable<string> SpecialInstructions { get; }
     }
 }
