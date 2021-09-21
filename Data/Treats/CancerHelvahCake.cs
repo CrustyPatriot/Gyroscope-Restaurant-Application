@@ -9,7 +9,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// A class representing the "Cancer Halveh cake" treat.
     /// </summary>
-    public class CancerHalvehCake : Treat
+    public class CancerHelvahCake : Treat
     {
         /// <summary>
         /// The price of the cancer halveh cake.

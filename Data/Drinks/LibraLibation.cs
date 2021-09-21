@@ -57,7 +57,7 @@ namespace GyroScope.Data.Drinks
             {
                 if (Sparkling)
                 {
-                    return $"{Sparkling} {Flavor} Libra Libation";
+                    return "Sparkling " + Flavor +  " Libra Libation";
                 }
                 else
                 {
