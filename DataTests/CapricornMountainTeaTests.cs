@@ -30,8 +30,8 @@ namespace GyroScope.DataTests
         /// <summary>
         /// Checks to see if calories is correct with or without honey.
         /// </summary>
-        /// <param name="honey"></param>
-        /// <param name="calories"></param>
+        /// <param name="honey">The honey to be checked.</param>
+        /// <param name="calories">The calories to be checked.</param>
         [Theory]
         [InlineData(true, 64)]
         [InlineData(false, 0)]

@@ -56,7 +56,7 @@ namespace GyroScope.DataTests
         /// <param name="tzatziki">The tzatsiki ingredient.</param>
         /// <param name="wingSauce">The wingsauce ingredient.</param>
         /// <param name="mintChutney">The mintchutney ingredient.</param>
-        /// <param name="Calories">The amount of calories.</param>
+        /// <param name="calories">The amount of calories.</param>
         [Theory]
         [InlineData(DonerMeat.Lamb, true, false, true, false, true, false, true, false, true, 516)]
         [InlineData(DonerMeat.Lamb, false, true, false, true, false, true, false, true, false, 297)]
