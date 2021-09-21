@@ -16,7 +16,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void PriceShouldBeCorrect()
         {
-            CancerHalvehCake treat = new();
+            CancerHelvahCake treat = new();
             Assert.Equal(3.00m, treat.Price);
         }
 
@@ -26,7 +26,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void CaloriesShouldBeCorrect()
         {
-            CancerHalvehCake treat = new();
+            CancerHelvahCake treat = new();
             Assert.Equal((uint)272, treat.Calories);
         }
     }

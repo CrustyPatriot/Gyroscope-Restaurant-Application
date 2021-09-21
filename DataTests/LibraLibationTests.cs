@@ -79,7 +79,7 @@ namespace GyroScope.DataTests
         /// Checks to see if the calories is correct for flavor.
         /// </summary>
         /// <param name="flavor">The flavor to check.</param>
-        /// <param name="price">The price to check.</param>
+        /// <param name="calories">The calories to check.</param>
         [Theory]
         [InlineData(LibraLibationFlavor.Orangeade, 180)]
         [InlineData(LibraLibationFlavor.SourCherry, 100)]
