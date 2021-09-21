@@ -47,30 +47,46 @@ namespace GyroScope.Data.Entrees
                     {
                         yield return "Use chicken";
                     }
-                    else
+                    if (Meat == DonerMeat.Lamb)
                     {
-                        yield return "Use Lamb";
+                        yield return "Use lamb";
                     }
                 }
-                else if (Pita == false)
+                if (Pita == false)
                 {
                     yield return "Hold pita";
                 }
-                else if (Tomato == false)
+                if (Tomato == false)
                 {
                     yield return "Hold tomato";
                 }
-                else if (Onion == false)
+                if (Onion == false)
                 {
                     yield return "Hold onion";
                 }
-                else if (Lettuce == false)
+                if (Lettuce == false)
                 {
                     yield return "Hold lettuce";
                 }
-                else if (Tzatziki == false)
+                if (Tzatziki == false)
                 {
                     yield return "Hold tzatziki";
+                }
+                if (Peppers == true)
+                {
+                    yield return "Add peppers";
+                }
+                if (WingSauce == true)
+                {
+                    yield return "Add wing sauce";
+                }
+                if (Eggplant == true)
+                {
+                    yield return "Add eggplant";
+                }
+                if (MintChutney == true)
+                {
+                    yield return "Add mint chutney";
                 }
             }
         }
@@ -88,51 +104,51 @@ namespace GyroScope.Data.Entrees
                 {
                     calorieSum += 187;
                 }
-                else if (Meat == DonerMeat.Lamb)
+                if (Meat == DonerMeat.Lamb)
                 {
                     calorieSum += 151;
                 }
-                else if (Meat == DonerMeat.Chicken)
+                if (Meat == DonerMeat.Chicken)
                 {
                     calorieSum += 113;
                 }
-                else if (Meat == DonerMeat.Beef)
+                if (Meat == DonerMeat.Beef)
                 {
                     calorieSum += 181;
                 }
-                else if (Pita == true)
+                if (Pita == true)
                 {
                     calorieSum += 262;
                 }
-                else if (Tomato == true)
+                if (Tomato == true)
                 {
                     calorieSum += 30;
                 }
-                else if (Onion == true)
+                if (Onion == true)
                 {
                     calorieSum += 30;
                 }
-                else if (Lettuce == true)
+                if (Lettuce == true)
                 {
                     calorieSum += 54;
                 }
-                else if (Tzatziki == true)
+                if (Tzatziki == true)
                 {
                     calorieSum += 30;
                 }
-                else if (Peppers == true)
+                if (Peppers == true)
                 {
                     calorieSum += 33;
                 }
-                else if (WingSauce == true)
+                if (WingSauce == true)
                 {
                     calorieSum += 15;
                 }
-                else if (Eggplant == true)
+                if (Eggplant == true)
                 {
                     calorieSum += 47;
                 }
-                else if (MintChutney == true)
+                if (MintChutney == true)
                 {
                     calorieSum += 10;
                 }
