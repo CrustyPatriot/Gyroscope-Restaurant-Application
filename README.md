@@ -1,3 +1,3 @@
 # GyroScope
 
-A starter project for the Kansas State University CIS 400 iterative class project for Fall 2021.
+A project implementing object orientation to create a fully functional fast food restaurant ordering application.
