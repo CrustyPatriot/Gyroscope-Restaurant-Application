@@ -156,10 +156,5 @@ namespace GyroScope.Data.Entrees
                 return calorieSum;
             }
         }
-
-        public static implicit operator LeoLambGyro(VirgoClassicGyro v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
