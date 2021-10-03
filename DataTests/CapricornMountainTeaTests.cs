@@ -14,7 +14,7 @@ namespace GyroScope.DataTests
         /// Checks to see if the price for honey is correct.
         /// </summary>
         /// <param name="honey">The honey to check.</param>
-        /// <param name="price">The price to check</param>
+        /// <param name="price">The price to check.</param>
         [Theory]
         [InlineData(true, 2.50)]
         [InlineData(false, 2.50)]
