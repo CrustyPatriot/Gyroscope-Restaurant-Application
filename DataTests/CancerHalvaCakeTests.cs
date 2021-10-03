@@ -8,7 +8,7 @@ namespace GyroScope.DataTests
     /// <summary>
     /// Unit tests for the cancer helvah cake
     /// </summary>
-    public class CancerHelvahCakeTests
+    public class CancerHalvaCakeTests
     {
         /// <summary>
         /// Checks to see if the price is correct.
@@ -16,7 +16,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void PriceShouldBeCorrect()
         {
-            CancerHelvahCake treat = new();
+            CancerHalvaCake treat = new();
             Assert.Equal(3.00m, treat.Price);
         }
 
@@ -26,7 +26,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void CaloriesShouldBeCorrect()
         {
-            CancerHelvahCake treat = new();
+            CancerHalvaCake treat = new();
             Assert.Equal((uint)272, treat.Calories);
         }
     }
