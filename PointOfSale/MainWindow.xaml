@@ -7,13 +7,54 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
-        <DockPanel>
-            <TextBlock DockPanel.Dock="Top" FontWeight="Bold" TextAlignment="Left" FontSize="40">
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" FontWeight="Bold" TextAlignment="Left" FontSize="40">
                 GyroScope Point of Sale
-            </TextBlock>
-        </DockPanel>
-        <Button FontSize="30" Content="Cancel Order" Height="90" Width="300" Margin="28,935,1592,39"/>
-        <Button FontSize="30" Content="Select Items" Height="90" Width="300" Margin="401,935,1219,39"></Button>
-        <Button FontSize="30" Content="Complete Order" Height="90" Width="300" Margin="778,935,842,39"/>
+        </TextBlock>
+        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="0" FontSize="35">
+            Cancel Order
+        </Button>
+        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="3" FontSize="35">
+            Select Items
+        </Button>
+        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="6" FontSize="35">
+            Complete Order
+        </Button>
+        <local:OrderSummaryControl Grid.Column="9" Grid.Row="1" Grid.RowSpan="9" Grid.ColumnSpan="5" FontSize="20"/>
     </Grid>
 </Window>
