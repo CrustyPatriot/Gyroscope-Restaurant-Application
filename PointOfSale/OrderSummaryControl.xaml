@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="350">
+             d:DesignHeight="600" d:DesignWidth="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -26,7 +26,7 @@
             </TextBlock>
         </StackPanel>
         <ListView Grid.Row="1" Grid.RowSpan="5"/>
-        <StackPanel Grid.Row="6" Grid.RowSpan="2">
+        <StackPanel HorizontalAlignment="Left" Grid.Row="6" Grid.RowSpan="2">
             <TextBlock FontSize="25" TextAlignment="Center">
                 Subtotal
             </TextBlock>
@@ -37,7 +37,7 @@
                 Total
             </TextBlock>
         </StackPanel>
-        <StackPanel Grid.Row="6" Grid.RowSpan="2">
+        <StackPanel Grid.Row="6" Grid.RowSpan="2" HorizontalAlignment="Right">
             <TextBlock FontSize="25" TextAlignment="Right">
                 $0.00
             </TextBlock>
