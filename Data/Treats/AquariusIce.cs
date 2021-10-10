@@ -31,7 +31,6 @@ namespace GyroScope.Data.Treats
 
         /// <summary>
         /// The size of this Aquarius Ice
-        /// \
         /// </summary>
         public Size Size
         {
@@ -41,6 +40,7 @@ namespace GyroScope.Data.Treats
                 if (_size != value)
                 {
                     _size = value;
+                    OnPropertyChanged(nameof(Size));
                     OnPropertyChanged(nameof(Price));
                     OnPropertyChanged(nameof(Name));
                 }
@@ -60,10 +60,12 @@ namespace GyroScope.Data.Treats
             get => _flavor;
             set
             {
-                _flavor = value;
-                OnPropertyChanged(nameof(Flavor));
-                OnPropertyChanged(nameof(Calories));
-                OnPropertyChanged(nameof(Name));
+                if (_flavor != value)
+                {
+                    _flavor = value;
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(Name));
+                }
             }
         }
 
