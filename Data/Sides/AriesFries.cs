@@ -13,6 +13,16 @@ namespace GyroScope.Data.Sides
     /// </summary>
     public class AriesFries : Side, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// Override to string method to be correct for the menu item.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{Size} Aries Fries";
+        }
+
         /// <summary>
         /// The price of the Ares Fries.
         /// </summary>

@@ -12,6 +12,16 @@ namespace GyroScope.Data.Drinks
     /// </summary>
     public class CapricornMountainTea : Drink, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// Override to string method to be correct for the menu item.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Capricorn Mountain Tea";
+        }
+
         /// <summary>
         /// The price of the capricorn mountain tea.
         /// </summary>

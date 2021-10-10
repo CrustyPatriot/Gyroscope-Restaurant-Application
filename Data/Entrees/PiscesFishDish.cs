@@ -33,5 +33,14 @@ namespace GyroScope.Data.Entrees
                 yield return "";
             }
         }
+
+        /// <summary>
+        /// Override to string method to be correct for the menu item.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Pisces Fish Dish";
+        }
     }
 }

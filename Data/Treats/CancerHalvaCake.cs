@@ -11,6 +11,16 @@ namespace GyroScope.Data.Treats
     /// </summary>
     public class CancerHalvaCake : Treat
     {
+
+        /// <summary>
+        /// Override to string method to be correct for the menu item.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Cancer Halva Cake";
+        }
+
         /// <summary>
         /// The price of the cancer halveh cake.
         /// </summary>

@@ -27,6 +27,15 @@ namespace GyroScope.Data.Entrees
         }
 
         /// <summary>
+        /// Override to string method to be correct for the menu item.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Scorpio Spicy Gyro";
+        }
+
+        /// <summary>
         /// The price of the scorpio spicy gyro.
         /// </summary>
         public override decimal Price => 6.20m;

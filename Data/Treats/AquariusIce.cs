@@ -13,6 +13,16 @@ namespace GyroScope.Data.Treats
     /// </summary>
     public class AquariusIce : Treat, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// Override to string method to be correct for the menu item.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{Size} {Flavor} Aquarius Ice";
+        }
+
         /// <summary>
         /// The name of this Aquarius Ice.
         /// </summary>

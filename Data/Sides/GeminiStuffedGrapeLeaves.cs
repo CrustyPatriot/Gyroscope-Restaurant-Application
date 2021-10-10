@@ -13,6 +13,16 @@ namespace GyroScope.Data.Sides
     /// </summary>
     public class GeminiStuffedGrapeLeaves : Side, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// Override to string method to be correct for the menu item.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{Size} Gemini Stuffed Grape Leaves";
+        }
+
         /// <summary>
         /// The price of the Gemini stuffed grape leaves.
         /// </summary>
