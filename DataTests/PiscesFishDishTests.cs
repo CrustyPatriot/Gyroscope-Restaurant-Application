@@ -41,5 +41,15 @@ namespace GyroScope.DataTests
             PiscesFishDish fish = new();
             Assert.Contains("",fish.SpecialInstructions);
         }
+
+        /// <summary>
+        /// Checks to see if the To String override method is correct.
+        /// </summary>
+        [Fact]
+        public void ToStringShouldReturnExpectedValue()
+        {
+            var dish = new PiscesFishDish();
+            Assert.Equal("Pisces Fish Dish", dish.ToString());
+        }
     }
 }

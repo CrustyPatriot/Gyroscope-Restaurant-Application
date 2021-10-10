@@ -29,5 +29,15 @@ namespace GyroScope.DataTests
             CancerHalvaCake treat = new();
             Assert.Equal((uint)272, treat.Calories);
         }
+
+        /// <summary>
+        /// Checks to see if the To String override method is correct.
+        /// </summary>
+        [Fact]
+        public void ToStringShouldReturnExpectedValue()
+        {
+            var cake = new CancerHalvaCake();
+            Assert.Equal("Cancer Halva Cake", cake.ToString());
+        }
     }
 }

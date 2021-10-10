@@ -55,24 +55,34 @@ namespace GyroScope.DataTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(side);
         }
 
+        /*  /// <summary>
+          /// Checks to see if the property changed changes the calories when honey changes.
+          /// </summary>
+          /// <param name="honey">The honey to change.</param>
+          /// <param name="propertyName">The name of the property to change.</param>
+          [Theory]
+          [InlineData(true, "Calories")]
+          [InlineData(false, "Calories")]
+          public void ShouldNotifyOfPropertyChangedWhenHoneyChanges(bool honey, string propertyName)
+          {
+              var drink = new CapricornMountainTea();
+
+              if (honey == true) { honey = false; }
+              Assert.PropertyChanged(honey, propertyName, () =>
+              {
+                  drink.Honey = honey;
+              });
+          }
+        */
+
         /// <summary>
-        /// Checks to see if the property changed changes the calories when honey changes.
+        /// Checks to see if the To String override method is correct.
         /// </summary>
-        /// <param name="honey">The honey to change.</param>
-        /// <param name="propertyName">The name of the property to change.</param>
-        [Theory]
-        [InlineData(true, "Calories")]
-        [InlineData(false, "Calories")]
-        public void ShouldNotifyOfPropertyChangedWhenHoneyChanges(bool honey, string propertyName)
+        [Fact]
+        public void ToStringShouldReturnExpectedValue()
         {
-            var drink = new CapricornMountainTea();
-
-            if (honey == true) { honey = false; }
-            Assert.PropertyChanged(honey, propertyName, () =>
-            {
-                drink.Honey = honey;
-            });
+            var gyro = new CapricornMountainTea();
+            Assert.Equal("Capricorn Mountain Tea", gyro.ToString());
         }
-
     }
 }

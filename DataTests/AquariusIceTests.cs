@@ -151,6 +151,23 @@ namespace GyroScope.DataTests
             });
         }
 
-
+        /// <summary>
+        /// Checks to see if the To String override method is correct.
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small,AquariusIceFlavor.BlueRaspberry, "Small BlueRaspberry Aquarius Ice")]
+        [InlineData(Size.Small, AquariusIceFlavor.Lemon, "Small Lemon Aquarius Ice")]
+        [InlineData(Size.Medium, AquariusIceFlavor.Mango, "Medium Mango Aquarius Ice")]
+        [InlineData(Size.Large, AquariusIceFlavor.Orange, "Large Orange Aquarius Ice")]
+        [InlineData(Size.Large, AquariusIceFlavor.Strawberry, "Large Strawberry Aquarius Ice")]
+        public void ToStringShouldReturnExpectedValue(Size size, AquariusIceFlavor flavor, string name)
+        {
+            var ice = new AquariusIce()
+            {
+                Size = size,
+                Flavor = flavor
+            };
+            Assert.Equal(name, ice.ToString());
+        }
     }
 }

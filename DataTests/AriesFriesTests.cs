@@ -109,5 +109,21 @@ namespace GyroScope.DataTests
                 side.Size = size;
             });
         }
+
+        /// <summary>
+        /// Checks to see if the To String override method is correct.
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small, "Small Aries Fries")]
+        [InlineData(Size.Medium, "Medium Aries Fries")]
+        [InlineData(Size.Large, "Large Aries Fries")]
+        public void ToStringShouldReturnExpectedValue(Size size, string name)
+        {
+            var side = new AriesFries()
+            {
+                Size = size
+            };
+            Assert.Equal(name, side.ToString());
+        }
     }
 }

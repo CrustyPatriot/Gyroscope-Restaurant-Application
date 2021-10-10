@@ -109,5 +109,21 @@ namespace GyroScope.DataTests
                 side.Size = size;
             });
         }
+
+        /// <summary>
+        /// Checks to see if the To String override method is correct.
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small, "Small Gemini Stuffed Grape Leaves")]
+        [InlineData(Size.Medium, "Medium Gemini Stuffed Grape Leaves")]
+        [InlineData(Size.Large, "Large Gemini Stuffed Grape Leaves")]
+        public void ToStringShouldReturnExpectedValue(Size size, string name)
+        {
+            var side = new GeminiStuffedGrapeLeaves()
+            {
+                Size = size
+            };
+            Assert.Equal(name, side.ToString());
+        }
     }
 }

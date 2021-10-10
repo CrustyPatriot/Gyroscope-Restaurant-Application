@@ -132,5 +132,15 @@ namespace GyroScope.DataTests
             };
             Assert.Equal(expected, gyro.SpecialInstructions);
         }
+
+        /// <summary>
+        /// Checks to see if the To String override method is correct.
+        /// </summary>
+        [Fact]
+        public void ToStringShouldReturnExpectedValue()
+        {
+            var gyro = new LeoLambGyro();
+            Assert.Equal("Leo Lamb Gyro", gyro.ToString());
+        }
     }
 }

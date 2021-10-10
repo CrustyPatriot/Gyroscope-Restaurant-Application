@@ -109,5 +109,21 @@ namespace GyroScope.DataTests
                 side.Size = size;
             });
         }
+
+        /// <summary>
+        /// Checks to see if the To String override method is correct.
+        /// </summary>
+        [Theory]
+        [InlineData(Size.Small, "Small Sagittarius Greek Salad")]
+        [InlineData(Size.Medium, "Medium Sagittarius Greek Salad")]
+        [InlineData(Size.Large, "Large Sagittarius Greek Salad")]
+        public void ToStringShouldReturnExpectedValue(Size size, string name)
+        {
+            var side = new SagittariusGreekSalad()
+            {
+                Size = size
+            };
+            Assert.Equal(name, side.ToString());
+        }
     }
 }
