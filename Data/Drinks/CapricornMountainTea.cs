@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace GyroScope.Data.Drinks
 {
     /// <summary>
     /// A class to represent the "Capricorn Mountain Tea" drink.
     /// </summary>
-    public class CapricornMountainTea : Drink
+    public class CapricornMountainTea : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// The price of the capricorn mountain tea.
@@ -34,9 +35,19 @@ namespace GyroScope.Data.Drinks
             }
         }
 
+        public bool _honey = false;
+
         /// <summary>
         /// The ingredient honey.
         /// </summary>
-        public bool Honey { get; set; } = false;
+        public bool Honey
+        {
+            get => _honey;
+            set
+            {
+                _honey = value;
+                OnPropertyChanged(nameof(Calories));
+            }
+        }
     }
 }

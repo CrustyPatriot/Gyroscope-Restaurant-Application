@@ -4,18 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 namespace GyroScope.Data.Drinks
 {
     /// <summary>
     /// The class to represent the "Libra Libation" drink.
     /// </summary>
-    public class LibraLibation : Drink
+    public class LibraLibation : Drink, INotifyPropertyChanged
     {
+        public LibraLibationFlavor _flavor = LibraLibationFlavor.Orangeade;
+
         /// <summary>
         /// The flavor of the libra libation.
         /// </summary>
-        public LibraLibationFlavor Flavor { get; set; }
+        public LibraLibationFlavor Flavor
+        {
+            get => _flavor;
+            set
+            {
+                if (_flavor != value)
+                {
+                    _flavor = value;
+                    OnPropertyChanged(nameof(Flavor));
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(Name));
+                }
+            }
+        }
 
         /// <summary>
         /// If the drink is sparkling (carbonated) or not.

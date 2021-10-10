@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// The class containing the Gyro instructions.
     /// </summary>
-    public class Gyro : Entree
+    public class Gyro : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// The price.

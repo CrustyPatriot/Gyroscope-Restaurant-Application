@@ -39,8 +39,8 @@ namespace GyroScope.Data.Treats
                 {
                     _size = value;
                     OnPropertyChanged(nameof(Size));
-                    OnPropertyChanged(nameof(this.Price));
-                    OnPropertyChanged(nameof(this.Name));
+                    OnPropertyChanged(nameof(Price));
+                    OnPropertyChanged(nameof(Name));
                 }
             }
         }
@@ -56,9 +56,9 @@ namespace GyroScope.Data.Treats
             set
             {
                 _flavor = value;
-                OnPropertyChanged(nameof(this.Flavor));
-                OnPropertyChanged(nameof(this.Calories));
-                OnPropertyChanged(nameof(this.Name));
+                OnPropertyChanged(nameof(Flavor));
+                OnPropertyChanged(nameof(Calories));
+                OnPropertyChanged(nameof(Name));
             }
         }
 

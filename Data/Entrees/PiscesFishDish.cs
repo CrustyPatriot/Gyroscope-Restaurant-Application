@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// A class to represent the Pisces Fish dish.
     /// </summary>
-    public class PiscesFishDish : Entree
+    public class PiscesFishDish : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// The price for the pisces fish dish.

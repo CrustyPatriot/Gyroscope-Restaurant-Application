@@ -117,6 +117,9 @@ namespace GyroScope.DataTests
             Assert.Equal(name, ice.Name);
         }
 
+        /// <summary>
+        /// Checks to see that the INotifyPropertyChanged event is correctly changed.
+        /// </summary>
         [Fact]
         public void ShouldImplementINotifyPropertyChanged()
         {
@@ -124,6 +127,11 @@ namespace GyroScope.DataTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(ice);
         }
 
+        /// <summary>
+        /// Checks to see if the INotifyPropertyChanged event changes the properties.
+        /// </summary>
+        /// <param name="size">The size to be changed.</param>
+        /// <param name="propertyName">The name of the property to be changed.</param>
         [Theory]
         [InlineData(Size.Small, "Size")]
         [InlineData(Size.Medium, "Size")]

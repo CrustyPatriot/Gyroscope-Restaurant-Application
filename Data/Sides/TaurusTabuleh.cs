@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 namespace GyroScope.Data.Sides
 {
     /// <summary>
     /// A class to represent a side of Tarus Tabuleh.
     /// </summary>
-    public class TaurusTabuleh : Side
+    public class TaurusTabuleh : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// The price of the Tarus Tabuleh.

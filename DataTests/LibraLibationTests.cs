@@ -2,6 +2,7 @@
 using Xunit;
 using GyroScope.Data.Enums;
 using GyroScope.Data.Drinks;
+using System.ComponentModel;
 
 namespace GyroScope.DataTests
 {
@@ -121,6 +122,42 @@ namespace GyroScope.DataTests
             Assert.Equal(name, drink.Name);
             sparkling = false;
             Assert.Equal(name, drink.Name);
+        }
+
+        /// <summary>
+        /// Checks to see that the INotifyPropertyChanged event is correctly changed.
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var drink = new LibraLibation();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(drink);
+        }
+
+        /// <summary>
+        /// Checks to see if the INotifyPropertyChanged event changes the properties.
+        /// </summary>
+        /// <param name="size">The size to be changed.</param>
+        /// <param name="propertyName">The name of the property to be changed.</param>
+        [Theory]
+        [InlineData(LibraLibationFlavor.Orangeade, "Name")]
+        [InlineData(LibraLibationFlavor.Orangeade, "Calories")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Name")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Calories")]
+        [InlineData(LibraLibationFlavor.Biral, "Name")]
+        [InlineData(LibraLibationFlavor.Biral, "Calories")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Name")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Calories")]
+        public void ShouldNotifyOfPropertyChangedWhenFlavorChanges(LibraLibationFlavor flavor, string propertyName)
+        {
+            var drink = new LibraLibation();
+
+            ///A quick hack to avoid not changing flavor when setting to the default flavor.
+            if (flavor == LibraLibationFlavor.Orangeade) { drink.Flavor = LibraLibationFlavor.SourCherry; }
+            Assert.PropertyChanged(flavor, propertyName, () =>
+            {
+                drink.Flavor = flavor;
+            });
         }
     }
 }

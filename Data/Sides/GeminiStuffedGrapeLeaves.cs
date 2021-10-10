@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 namespace GyroScope.Data.Sides
 {
     /// <summary>
     /// A class to represent a side of Gemini Stuffed Grape Leaves.
     /// </summary>
-    public class GeminiStuffedGrapeLeaves : Side
+    public class GeminiStuffedGrapeLeaves : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// The price of the Gemini stuffed grape leaves.

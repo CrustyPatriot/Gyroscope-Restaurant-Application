@@ -2,6 +2,7 @@
 using Xunit;
 using GyroScope.Data.Enums;
 using GyroScope.Data.Drinks;
+using System.ComponentModel;
 
 namespace GyroScope.DataTests
 {
@@ -42,6 +43,30 @@ namespace GyroScope.DataTests
                 Honey = honey
             };
             Assert.Equal(calories, tea.Calories);
+        }
+
+        /// <summary>
+        /// Checks to see that the INotifyPropertyChanged event is correctly changed.
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var side = new CapricornMountainTea();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(side);
+        }
+
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        public void ShouldNotifyOfPropertyChangedWhenHoneyChanges(bool honey, string propertyName)
+        {
+            var drink = new CapricornMountainTea();
+
+            if (honey == true) { honey = false; }
+            Assert.PropertyChanged(honey, propertyName, () =>
+            {
+                drink.Honey = honey;
+            });
         }
     }
 }

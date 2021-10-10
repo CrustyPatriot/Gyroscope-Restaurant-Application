@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// A class to represent the Virgo Classic Gyro.
     /// </summary>
-    public class VirgoClassicGyro : Gyro
+    public class VirgoClassicGyro : Gyro, INotifyPropertyChanged
     {
         /// <summary>
         /// Constructor for the virgo classic gyro.
