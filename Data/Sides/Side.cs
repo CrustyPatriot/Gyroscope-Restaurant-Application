@@ -34,7 +34,6 @@ namespace GyroScope.Data.Sides
                 if (_size != value)
                 {
                     _size = value;
-                    OnPropertyChanged(nameof(Size));
                     OnPropertyChanged(nameof(Price));
                     OnPropertyChanged(nameof(Calories));
                 }

@@ -29,7 +29,6 @@ namespace GyroScope.Data.Drinks
                 if (_flavor != value)
                 {
                     _flavor = value;
-                    OnPropertyChanged(nameof(Flavor));
                     OnPropertyChanged(nameof(Calories));
                     OnPropertyChanged(nameof(Name));
                 }
