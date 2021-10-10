@@ -46,40 +46,40 @@
             Drinks
         </TextBlock>
         <!-- A button determining if the user would like a virgo classic gyro-->
-        <Button  Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" FontSize="30" Click="Button_Click">
+        <Button Button.Name="VirgoClassicGyro" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" FontSize="30" Click="Button_Click">
             Virgo Classic Gyro
         </Button>
         <!-- A button determining if the user would like a leo lamb gyro-->
-        <Button  Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" FontSize="30">
+        <Button Button.Name="LeoLambGyro"  Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" FontSize="30" Click="Button_Click_1">
             Leo Lamb Gyro
         </Button>
         <!-- A button determining if the user would like a scorpio spicy gyro-->
-        <Button  Grid.Row="5" Grid.RowSpan="2" Grid.Column="0" FontSize="30">
+        <Button  Button.Name="ScorpioSpicyGyro" Grid.Row="5" Grid.RowSpan="2" Grid.Column="0" FontSize="30" Click="ScorpioSpicyGyro_Click">
             Scorpio Spicy Gyro
         </Button>
         <!-- A button determining if the user would like a pisces fish dish-->
-        <Button  Grid.Row="7" Grid.RowSpan="2" Grid.Column="0" FontSize="30">
+        <Button Button.Name="PiscesFishDish"  Grid.Row="7" Grid.RowSpan="2" Grid.Column="0" FontSize="30" Click="PiscesFishDish_Click">
             Pisces Fish Dish
         </Button>
         <!-- A button determining if the user would like a taurus tabouleh-->
-        <Button Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" FontSize="30">
+        <Button Button.Name="TaurusTabouleh" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" FontSize="30" Click="TaurusTabouleh_Click">
             Taurus Tabouleh
         </Button>
-        <Button Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" FontSize="30">
+        <Button Button.Name="GeminiStuffedGrapeLeaves"  Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" FontSize="30" Click="GeminiStuffedGrapeLeaves_Click">
             <TextBlock TextAlignment="Center">Gemini Stuffed<LineBreak/>Grape Leaves</TextBlock>
         </Button>
-        <Button  Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" FontSize="30">
+        <Button Button.Name="SagittariusGreekSalad"  Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" FontSize="30" Click="SagittariusGreekSalad_Click">
             <TextBlock TextAlignment="Center">Sagittarius<LineBreak/>Greek Salad</TextBlock>
         </Button>
         <!-- A button determining if the user would like an ares fries-->
-        <Button  Grid.Row="7" Grid.RowSpan="2" Grid.Column="1" FontSize="30">
+        <Button Button.Name="AresFries"  Grid.Row="7" Grid.RowSpan="2" Grid.Column="1" FontSize="30" Click="AresFries_Click">
             Ares Fries
         </Button>
         <!-- A button determining if the user would like a libra libation-->
-        <Button  Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" FontSize="30">
+        <Button Button.Name="LibraLibation"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" FontSize="30" Click="LibraLibation_Click">
             Libra Libation
         </Button>
-        <Button  Grid.Row="3" Grid.RowSpan="2" Grid.Column="2" FontSize="30">
+        <Button Button.Name="CapricornMountainTea"  Grid.Row="3" Grid.RowSpan="2" Grid.Column="2" FontSize="30" Click="CapricornMountainTea_Click">
             <TextBlock TextAlignment="Center">Capricorn<LineBreak/>Mountain Tea</TextBlock>
         </Button>
         <!-- Text block listing the treats available-->
@@ -87,11 +87,11 @@
             Treats
         </TextBlock>
         <!-- A button determining if the user would like an aquarius ice-->
-        <Button  Grid.Row="6" Grid.RowSpan="2" Grid.Column="2" FontSize="30">
+        <Button Button.Name="AquariusIce"  Grid.Row="6" Grid.RowSpan="2" Grid.Column="2" FontSize="30" Click="AquariusIce_Click">
             Aquarius Ice
         </Button>
         <!-- A button determining if the user would like a cancer halva cake-->
-        <Button  Grid.Row="8" Grid.RowSpan="2" Grid.Column="2" FontSize="30">
+        <Button Button.Name="CancerHalvaCake"  Grid.Row="8" Grid.RowSpan="2" Grid.Column="2" FontSize="30" Click="CancerHalvaCake_Click">
             Cancer Halva Cake
         </Button>
     </Grid>
