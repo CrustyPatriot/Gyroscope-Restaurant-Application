@@ -18,24 +18,31 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <!-- The Text Box labeling the various flavors-->
         <TextBlock Grid.Row="0" Grid.Column="0" FontSize="60" TextAlignment="Center" Grid.ColumnSpan="3">
             Aquarius Ice Flavors
         </TextBlock>
+        <!-- The watermellon ice flavor-->
         <RadioButton Grid.Row="1" Grid.Column="1" FontSize="30">
             Watermellon
         </RadioButton>
+        <!-- The blue raspberry flavor-->
         <RadioButton Grid.Row="2" Grid.Column="1" FontSize="30">
             Blue Raspberry
         </RadioButton>
+        <!-- The strawberry flavor-->
         <RadioButton Grid.Row="3" Grid.Column="1" FontSize="30">
             Strawberry
         </RadioButton>
+        <!-- The lemon flavor-->
         <RadioButton Grid.Row="1" Grid.Column="0" FontSize="30">
             Lemon
         </RadioButton>
+        <!-- The orange flavor-->
         <RadioButton Grid.Row="2" Grid.Column="0" FontSize="30">
             Orange
         </RadioButton>
+        <!-- The mango flavor-->
         <RadioButton Grid.Row="3" Grid.Column="0" FontSize="30">
             Mango
         </RadioButton>

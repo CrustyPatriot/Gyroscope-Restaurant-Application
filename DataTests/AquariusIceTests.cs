@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using GyroScope.Data.Enums;
 using GyroScope.Data.Treats;
+using System.ComponentModel;
 
 namespace GyroScope.DataTests
 {
@@ -114,6 +115,32 @@ namespace GyroScope.DataTests
                 Flavor = flavor
             };
             Assert.Equal(name, ice.Name);
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var ice = new AquariusIce();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ice);
+        }
+
+        [Theory]
+        [InlineData(Size.Small, "Size")]
+        [InlineData(Size.Medium, "Size")]
+        [InlineData(Size.Large, "Size")]
+        [InlineData(Size.Small, "Price")]
+        [InlineData(Size.Medium, "Price")]
+        [InlineData(Size.Large, "Price")]
+        public void ShouldNotifyOfPropertyChangedWhenSizeChanges(Size size, string propertyName)
+        {
+            var ice = new AquariusIce();
+
+            ///A quick hack to avoid not changing size when setting to the default size.
+            if (size == Size.Small) { ice.Size = Size.Large; }
+            Assert.PropertyChanged(ice, propertyName, () =>
+            {
+                ice.Size = size;
+            });
         }
     }
 }

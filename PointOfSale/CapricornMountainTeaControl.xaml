@@ -18,9 +18,11 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <!-- Text box describing the capricorn mountain tea customization options-->
         <TextBlock Grid.Row="0" Grid.Column="0" FontSize="40" TextAlignment="Center" Grid.ColumnSpan="3">
             Capricorn Mountain Tea
         </TextBlock>
+        <!-- Checkbox determining if the user would like honey in their tea or not-->
         <CheckBox Grid.Row="1" Grid.Column="1" FontSize="30" HorizontalAlignment="Center" Grid.ColumnSpan="1" VerticalAlignment="Bottom">
             Honey
         </CheckBox>

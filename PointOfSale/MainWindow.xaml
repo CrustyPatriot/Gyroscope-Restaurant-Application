@@ -43,19 +43,25 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <!-- A text block showing the overall point of sale system for gyroscope-->
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" FontWeight="Bold" TextAlignment="Left" FontSize="40">
                 GyroScope Point of Sale
         </TextBlock>
+        <!-- A button offering the user to cancel the order-->
         <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="0" FontSize="35">
             Cancel Order
         </Button>
+        <!-- A button offering the user to select items for their order-->
         <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="3" FontSize="35">
             Select Items
         </Button>
+        <!-- A button offering the user to complete their order-->
         <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="6" FontSize="35">
             Complete Order
         </Button>
+        <!-- The menu selection control showing all items to add to order-->
         <local:MenuItemSelectionControl Grid.ColumnSpan="8" Grid.RowSpan="6" Grid.Row="1" Grid.Column="0"/>
+        <!-- The order selection control showing the order summary including price and items-->
         <local:OrderSummaryControl Grid.ColumnSpan="5" Grid.RowSpan="7" Grid.Row="1" Grid.Column="9"/>
     </Grid>
 </Window>

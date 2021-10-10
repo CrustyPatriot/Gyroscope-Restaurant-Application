@@ -18,32 +18,41 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel>
+            <!-- The order number-->
             <TextBlock Grid.Row="0" FontSize="18" TextAlignment="Center">
             Order # 101
             </TextBlock>
+            <!-- The date of the order-->
             <TextBlock Grid.Row="0" FontSize="18" TextAlignment="Center">
             10/05/2021
             </TextBlock>
         </StackPanel>
+        <!-- The listview showing all items added to order-->
         <ListView Grid.Row="1" Grid.RowSpan="5"/>
         <StackPanel HorizontalAlignment="Left" Grid.Row="6" Grid.RowSpan="2">
+            <!-- Textblock showing subtotal on the corresponding right side of the menu-->
             <TextBlock FontSize="25" TextAlignment="Center">
                 Subtotal
             </TextBlock>
+            <!-- Textblock showing tax on the corresponding right side of the menu-->
             <TextBlock FontSize="25" TextAlignment="Center">
                 Tax
             </TextBlock>
+            <!-- Textblock showing total on the corresponding right side of the menu-->
             <TextBlock FontSize="25" TextAlignment="Center">
                 Total
             </TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="6" Grid.RowSpan="2" HorizontalAlignment="Right">
+            <!-- The subtotal-->
             <TextBlock FontSize="25" TextAlignment="Right">
                 $0.00
             </TextBlock>
+            <!-- The tax-->
             <TextBlock FontSize="25" TextAlignment="Right">
                 $0.00
             </TextBlock>
+            <!-- The total-->
             <TextBlock FontSize="25" TextAlignment="Right">
                 $0.00
             </TextBlock>

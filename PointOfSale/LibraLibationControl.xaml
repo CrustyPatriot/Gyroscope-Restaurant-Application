@@ -18,15 +18,19 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <!-- Text box showing the flavor portion customization of the libra libation control-->
         <TextBlock Grid.Row="0" Grid.Column="1" FontSize="60" TextAlignment="Center">
             Flavors
         </TextBlock>
+        <!-- A button determining if the user would like the orangeade flavor-->
         <RadioButton Grid.Row="1" Grid.Column="1" FontSize="40">
             Orangeade
         </RadioButton>
+        <!-- A button determining if the user would like the sour cherry flavor-->
         <RadioButton Grid.Row="2" Grid.Column="1" FontSize="40">
             SourCherry
         </RadioButton>
+        <!-- A button determining if the user would like the biral flavor-->
         <RadioButton Grid.Row="3" Grid.Column="1" FontSize="40">
             Biral
         </RadioButton>
