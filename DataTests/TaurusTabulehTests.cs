@@ -111,8 +111,10 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
-        /// Checks to see if the To String override method is correct.
+        /// Checks to see if the to string override method is correct.
         /// </summary>
+        /// <param name="size">The size to check.</param>
+        /// <param name="name">The name to check.</param>
         [Theory]
         [InlineData(Size.Small, "Small Taurus Tabouleh")]
         [InlineData(Size.Medium, "Medium Taurus Tabouleh")]

@@ -152,8 +152,11 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
-        /// Checks to see if the To String override method is correct.
+        /// Checks to see if the to string override method is correct.
         /// </summary>
+        /// <param name="size">The size to check.</param>
+        /// <param name="flavor">The flavor to check</param>
+        /// <param name="name">The name to check.</param>
         [Theory]
         [InlineData(Size.Small,AquariusIceFlavor.BlueRaspberry, "Small BlueRaspberry Aquarius Ice")]
         [InlineData(Size.Small, AquariusIceFlavor.Lemon, "Small Lemon Aquarius Ice")]
