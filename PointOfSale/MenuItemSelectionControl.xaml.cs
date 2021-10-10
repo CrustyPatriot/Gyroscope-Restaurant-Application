@@ -5,14 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using GyroScope.Data.Entrees;
+using GyroScope.Data.Sides;
+using GyroScope.Data.Treats;
+using GyroScope.Data.Drinks;
 
 namespace PointOfSale
 {
@@ -39,7 +35,7 @@ namespace PointOfSale
             VirgoClassicGyro gyro = new VirgoClassicGyro();
             DataContext = gyro;
             MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.menuBorder.Child = new GyroCustomControl();
+            menu.AddChild(gyro);
         }
 
         /// <summary>
@@ -49,7 +45,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void LeoLambGyro_Click(object sender, RoutedEventArgs e)
         {
-
+            LeoLambGyro gyro = new LeoLambGyro();
+            DataContext = gyro;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(gyro);
         }
 
         /// <summary>
@@ -59,7 +58,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void ScorpioSpicyGyro_Click(object sender, RoutedEventArgs e)
         {
-
+            ScorpioSpicyGyro gyro = new ScorpioSpicyGyro();
+            DataContext = gyro;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(gyro);
         }
 
         /// <summary>
@@ -69,7 +71,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void PiscesFishDish_Click(object sender, RoutedEventArgs e)
         {
-
+            PiscesFishDish fish = new PiscesFishDish();
+            DataContext = fish;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(fish);
         }
 
         /// <summary>
@@ -79,7 +84,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void TaurusTabouleh_Click(object sender, RoutedEventArgs e)
         {
-
+            TaurusTabuleh side = new TaurusTabuleh();
+            DataContext = side;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(side);
         }
 
         /// <summary>
@@ -89,7 +97,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void GeminiStuffedGrapeLeaves_Click(object sender, RoutedEventArgs e)
         {
-
+            GeminiStuffedGrapeLeaves side = new GeminiStuffedGrapeLeaves();
+            DataContext = side;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(side);
         }
 
         /// <summary>
@@ -99,7 +110,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void SagittariusGreekSalad_Click(object sender, RoutedEventArgs e)
         {
-
+            SagittariusGreekSalad side = new SagittariusGreekSalad();
+            DataContext = side;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(side);
         }
 
         /// <summary>
@@ -109,7 +123,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void AresFries_Click(object sender, RoutedEventArgs e)
         {
-
+            AriesFries side = new AriesFries();
+            DataContext = side;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(side);
         }
 
         /// <summary>
@@ -119,7 +136,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void LibraLibation_Click(object sender, RoutedEventArgs e)
         {
-
+            LibraLibation drink = new LibraLibation();
+            DataContext = drink;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(drink);
         }
 
         /// <summary>
@@ -129,7 +149,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void CapricornMountainTea_Click(object sender, RoutedEventArgs e)
         {
-
+            CapricornMountainTea drink = new CapricornMountainTea();
+            DataContext = drink;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(drink);
         }
 
         /// <summary>
@@ -139,7 +162,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void AquariusIce_Click(object sender, RoutedEventArgs e)
         {
-
+            AquariusIce ice = new AquariusIce();
+            DataContext = ice;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(ice);
         }
 
         /// <summary>
@@ -149,7 +175,10 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void CancerHalvaCake_Click(object sender, RoutedEventArgs e)
         {
-
+            CancerHalvaCake cake = new CancerHalvaCake();
+            DataContext = cake;
+            MenuItemSelectionControl menu = new MenuItemSelectionControl();
+            menu.AddChild(cake);
         }
     }
 }

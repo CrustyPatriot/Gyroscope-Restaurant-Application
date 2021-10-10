@@ -23,7 +23,10 @@ namespace GyroScope.Data.Entrees
         /// </summary>
         public override uint Calories { get; }
 
-        public DonerMeat _meat = DonerMeat.Chicken;
+        /// <summary>
+        /// Backing field for the meat property.
+        /// </summary>
+        public DonerMeat _meat;
 
         /// <summary>
         /// The type of meat.
@@ -42,7 +45,7 @@ namespace GyroScope.Data.Entrees
         }
 
         /// <summary>
-        /// Backing field for the ingredient pita.
+        /// Backing field for the Pita property.
         /// </summary>
         public bool _pita;
 

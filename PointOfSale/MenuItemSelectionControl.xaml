@@ -11,7 +11,7 @@
             <Style TargetType="Button">
                 <Style.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="15"/>
+                        <Setter Property="CornerRadius" Value="60"/>
                     </Style>
                 </Style.Resources>
             </Style>
