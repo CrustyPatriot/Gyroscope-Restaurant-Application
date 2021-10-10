@@ -40,10 +40,27 @@ namespace GyroScope.Data.Entrees
                 }
             }
         }
+
+        /// <summary>
+        /// Backing field for the ingredient pita.
+        /// </summary>
+        public bool _pita;
+
         /// <summary>
         /// The ingredient pita.
         /// </summary>
-        public bool Pita { get; set; }
+        public bool Pita
+        {
+            get => _pita;
+            set
+            {
+                if (_pita != value)
+                {
+                    _pita = value;
+                    OnPropertyChanged(nameof(Calories));
+                }
+            }
+        }
         /// <summary>
         /// The ingredient tomato.
         /// </summary>
