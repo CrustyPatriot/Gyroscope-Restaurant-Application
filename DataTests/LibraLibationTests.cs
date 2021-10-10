@@ -163,7 +163,7 @@ namespace GyroScope.DataTests
         /// <summary>
         /// Checks to see if the INotifyPropertyChanged event changes the properties.
         /// </summary>
-        /// <param name="flavor">The size to be changed.</param>
+        /// <param name="sparkling">The sparkling to be changed.</param>
         /// <param name="propertyName">The name of the property to be changed.</param>
         [Theory]
         [InlineData(true, "Name")]
