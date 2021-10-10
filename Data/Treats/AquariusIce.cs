@@ -24,6 +24,9 @@ namespace GyroScope.Data.Treats
             }
         }
 
+        /// <summary>
+        /// Private backing field for size.
+        /// </summary>
         public Size _size = Size.Small;
 
         /// <summary>
@@ -45,6 +48,9 @@ namespace GyroScope.Data.Treats
             }
         }
 
+        /// <summary>
+        /// Private backing field for aquarius ice flavor.
+        /// </summary>
         public AquariusIceFlavor _flavor = AquariusIceFlavor.Lemon;
 
         /// <summary>
