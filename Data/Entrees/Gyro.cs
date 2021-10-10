@@ -58,6 +58,7 @@ namespace GyroScope.Data.Entrees
                 {
                     _pita = value;
                     OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
                 }
             }
         }
