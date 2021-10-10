@@ -13,6 +13,9 @@ namespace GyroScope.Data.Drinks
     /// </summary>
     public class LibraLibation : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Private backing field for libra libation flavor.
+        /// </summary>
         public LibraLibationFlavor _flavor = LibraLibationFlavor.Orangeade;
 
         /// <summary>

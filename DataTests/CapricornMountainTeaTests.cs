@@ -55,6 +55,11 @@ namespace GyroScope.DataTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(side);
         }
 
+        /// <summary>
+        /// Checks to see if the property changed changes the calories when honey changes.
+        /// </summary>
+        /// <param name="honey">The honey to change.</param>
+        /// <param name="propertyName">The name of the property to change.</param>
         [Theory]
         [InlineData(true, "Calories")]
         [InlineData(false, "Calories")]

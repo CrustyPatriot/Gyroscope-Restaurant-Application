@@ -17,7 +17,10 @@ namespace GyroScope.Data.Sides
         /// Notifies when a property of this class changes.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-
+        
+        /// <summary>
+        /// Private backing field part 2;
+        /// </summary>
         public Size _size = Size.Small;
 
         /// <summary>
