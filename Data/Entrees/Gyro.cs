@@ -23,7 +23,7 @@ namespace GyroScope.Data.Entrees
         /// </summary>
         public override uint Calories { get; }
 
-        public DonerMeat _meat;
+        public DonerMeat _meat = DonerMeat.Chicken;
 
         /// <summary>
         /// The type of meat.

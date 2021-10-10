@@ -24,10 +24,5 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
-        private void VirgoClassicGyro_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
