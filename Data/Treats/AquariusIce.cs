@@ -25,7 +25,7 @@ namespace GyroScope.Data.Treats
         }
 
         /// <summary>
-        /// Private backing field for size.
+        /// Backing field for size.
         /// </summary>
         public Size _size = Size.Small;
 
@@ -48,7 +48,7 @@ namespace GyroScope.Data.Treats
         }
 
         /// <summary>
-        /// Private backing field for aquarius ice flavor.
+        /// Backing field for aquarius ice flavor.
         /// </summary>
         public AquariusIceFlavor _flavor = AquariusIceFlavor.Lemon;
 
@@ -63,6 +63,7 @@ namespace GyroScope.Data.Treats
                 if (_flavor != value)
                 {
                     _flavor = value;
+                    OnPropertyChanged(nameof(Flavor));
                     OnPropertyChanged(nameof(Calories));
                     OnPropertyChanged(nameof(Name));
                 }

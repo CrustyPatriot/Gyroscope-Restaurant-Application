@@ -19,7 +19,7 @@ namespace GyroScope.Data.Sides
         public event PropertyChangedEventHandler PropertyChanged;
         
         /// <summary>
-        /// Private backing field part 2;
+        /// Backing field part 2;
         /// </summary>
         public Size _size = Size.Small;
 

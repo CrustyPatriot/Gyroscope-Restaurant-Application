@@ -22,10 +22,24 @@ namespace GyroScope.Data.Entrees
         /// The calories.
         /// </summary>
         public override uint Calories { get; }
+
+        public DonerMeat _meat;
+
         /// <summary>
         /// The type of meat.
         /// </summary>
-        public DonerMeat Meat { get; set; }
+        public DonerMeat Meat
+        {
+            get => _meat;
+            set
+            {
+                if (_meat != value)
+                {
+                    _meat = value;
+                    OnPropertyChanged(nameof(Calories));
+                }
+            }
+        }
         /// <summary>
         /// The ingredient pita.
         /// </summary>

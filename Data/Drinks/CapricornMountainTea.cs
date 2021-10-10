@@ -36,7 +36,7 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
-        /// Private backing field for honey.
+        /// Backing field for honey.
         /// </summary>
         public bool _honey = false;
 

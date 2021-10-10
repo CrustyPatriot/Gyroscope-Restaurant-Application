@@ -37,9 +37,25 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
+        /// Backing field for sparkling
+        /// </summary>
+        private bool _sparkling = true;
+
+        /// <summary>
         /// If the drink is sparkling (carbonated) or not.
         /// </summary>
-        public bool Sparkling { get; set; } = true;
+        public bool Sparkling
+        {
+            get => _sparkling;
+            set
+            {
+                if (_sparkling != value)
+                {
+                    _sparkling = value;
+                    OnPropertyChanged(nameof(Name));
+                }
+            }
+        }
 
         /// <summary>
         /// The calories of the libra libation.

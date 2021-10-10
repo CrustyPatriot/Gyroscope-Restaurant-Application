@@ -159,5 +159,25 @@ namespace GyroScope.DataTests
                 drink.Flavor = flavor;
             });
         }
+
+        /// <summary>
+        /// Checks to see if the INotifyPropertyChanged event changes the properties.
+        /// </summary>
+        /// <param name="flavor">The size to be changed.</param>
+        /// <param name="propertyName">The name of the property to be changed.</param>
+        [Theory]
+        [InlineData(true, "Name")]
+        [InlineData(false, "Name")]
+        public void ShouldNotifyOfPropertyChangedWhenSparklingChanges(bool sparkling, string propertyName)
+        {
+            var drink = new LibraLibation();
+
+            ///A quick hack to avoid not changing flavor when setting to the default flavor.
+            if (sparkling == true) { sparkling = false; }
+            Assert.PropertyChanged(sparkling, propertyName, () =>
+            {
+                drink.Sparkling = sparkling;
+            });
+        }
     }
 }
