@@ -66,37 +66,181 @@ namespace GyroScope.Data.Entrees
                 }
             }
         }
+
+        /// <summary>
+        /// Backing field for the Tomato property.
+        /// </summary>
+        public bool _tomato;
+
         /// <summary>
         /// The ingredient tomato.
         /// </summary>
-        public bool Tomato { get; set; }
+        public bool Tomato
+        {
+            get => _tomato;
+            set
+            {
+                if (_tomato != value)
+                {
+                    _tomato = value;
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Onion property.
+        /// </summary>
+        public bool _onion;
+
         /// <summary>
         /// The ingredient onion.
         /// </summary>
-        public bool Onion { get; set; }
+        public bool Onion
+        {
+            get => _onion;
+            set
+            {
+                if (_onion != value)
+                {
+                    _onion = value;
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Eggplant property.
+        /// </summary>
+        public bool _eggplant;
+
         /// <summary>
         /// The ingredient eggplant.
         /// </summary>
-        public bool Eggplant { get; set; }
+        public bool Eggplant
+        {
+            get => _eggplant;
+            set
+            {
+                if (_eggplant != value)
+                {
+                    _eggplant = value;
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Lettuce property.
+        /// </summary>
+        public bool _lettuce;
+
         /// <summary>
         /// The ingredient lettuce.
         /// </summary>
-        public bool Lettuce { get; set; }
+        public bool Lettuce
+        {
+            get => _lettuce;
+            set
+            {
+                if ( _lettuce != value)
+                {
+                    _lettuce = value;
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Mint Chutney property.
+        /// </summary>
+        public bool _mintChutney;
+
         /// <summary>
         /// The ingredient mint chutney.
         /// </summary>
-        public bool MintChutney { get; set; }
+        public bool MintChutney
+        {
+            get => _mintChutney;
+            set
+            {
+                if (_mintChutney != value)
+                {
+                    _mintChutney = value;
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Tzatziki property.
+        /// </summary>
+        public bool _tzatziki;
+
         /// <summary>
         /// The ingredient tzatziki.
         /// </summary>
-        public bool Tzatziki { get; set; }
+        public bool Tzatziki
+        {
+            get => _tzatziki;
+            set
+            {
+                if (_tzatziki != value)
+                {
+                    _tzatziki = value;
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Peppers property.
+        /// </summary>
+        public bool _peppers;
+
         /// <summary>
         /// The ingredient peppers.
         /// </summary>
-        public bool Peppers { get; set; }
+        public bool Peppers
+        {
+            get => _peppers;
+            set
+            {
+                if (_peppers != value)
+                {
+                    _peppers = value;
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Wing Sauce property.
+        /// </summary>
+        public bool _wingSauce;
+
         /// <summary>
         /// The ingredient wing sauce.
         /// </summary>
-        public bool WingSauce { get; set; }
+        public bool WingSauce
+        {
+            get => _wingSauce;
+            set
+            {
+                if (_wingSauce != value)
+                {
+                    _wingSauce = value;
+                    OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
+                }
+            }
+        }
     }
 }

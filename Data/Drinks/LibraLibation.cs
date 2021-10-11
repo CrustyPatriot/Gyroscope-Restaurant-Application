@@ -64,6 +64,7 @@ namespace GyroScope.Data.Drinks
                 if (_sparkling != value)
                 {
                     _sparkling = value;
+                    OnPropertyChanged(nameof(Sparkling));
                     OnPropertyChanged(nameof(Name));
                 }
             }
