@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" Width="793">
+    <Border x:Name="MenuBorderItem">
     <Grid>
         <Grid.Resources>
             <Style TargetType="Button">
@@ -46,11 +47,11 @@
             Drinks
         </TextBlock>
         <!-- A button determining if the user would like a virgo classic gyro-->
-        <Button Button.Name="VirgoClassicGyro" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" FontSize="30" Click="Button_Click">
+        <Button Button.Name="VirgoClassicGyro" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" FontSize="30" Click="VirgoClassicGyro_Click">
             Virgo Classic Gyro
         </Button>
         <!-- A button determining if the user would like a leo lamb gyro-->
-        <Button Button.Name="LeoLambGyro"  Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" FontSize="30" Click="Button_Click_1">
+        <Button Button.Name="LeoLambGyro"  Grid.Row="3" Grid.RowSpan="2" Grid.Column="0" FontSize="30" Click="LeoLambGyro_Click">
             Leo Lamb Gyro
         </Button>
         <!-- A button determining if the user would like a scorpio spicy gyro-->
@@ -95,4 +96,5 @@
             Cancer Halva Cake
         </Button>
     </Grid>
+    </Border>
 </UserControl>

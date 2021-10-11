@@ -27,5 +27,16 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Event handler for the Cancel button.
+        /// </summary>
+        /// <param name="sender">The object sending the event.</param>
+        /// <param name="e">The event.</param>
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            menuItemSelection.Child = new MenuItemSelectionControl();
+
+        }
     }
 }

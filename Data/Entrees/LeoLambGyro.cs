@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using System.ComponentModel;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// A class to represent the Leo Lamb Gyro.
     /// </summary>
-    public class LeoLambGyro : Gyro
+    public class LeoLambGyro : Gyro, INotifyPropertyChanged
     {
         /// <summary>
         /// Constructor for the leo lamb gyro.

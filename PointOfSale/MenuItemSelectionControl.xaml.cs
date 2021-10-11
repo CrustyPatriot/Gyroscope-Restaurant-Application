@@ -32,10 +32,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void VirgoClassicGyro_Click(object sender, RoutedEventArgs e)
         {
-            VirgoClassicGyro gyro = new VirgoClassicGyro();
-            DataContext = gyro;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(gyro);
+            if (sender is Button)
+            {
+                VirgoClassicGyro gyro = new VirgoClassicGyro();              
+                GyroCustomControl data = new GyroCustomControl();
+                data.DataContext = gyro;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -45,10 +48,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void LeoLambGyro_Click(object sender, RoutedEventArgs e)
         {
-            LeoLambGyro gyro = new LeoLambGyro();
-            DataContext = gyro;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(gyro);
+            if (sender is Button)
+            {
+                LeoLambGyro gyro = new LeoLambGyro();              
+                GyroCustomControl data = new GyroCustomControl();
+                data.DataContext = gyro;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -58,10 +64,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void ScorpioSpicyGyro_Click(object sender, RoutedEventArgs e)
         {
-            ScorpioSpicyGyro gyro = new ScorpioSpicyGyro();
-            DataContext = gyro;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(gyro);
+            if (sender is Button)
+            {
+                ScorpioSpicyGyro gyro = new ScorpioSpicyGyro();                
+                GyroCustomControl data = new GyroCustomControl();
+                data.DataContext = gyro;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -71,10 +80,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void PiscesFishDish_Click(object sender, RoutedEventArgs e)
         {
-            PiscesFishDish fish = new PiscesFishDish();
-            DataContext = fish;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(fish);
+            if (sender is Button)
+            {
+                PiscesFishDish fish = new PiscesFishDish();
+                PiscesFishDishControl data = new PiscesFishDishControl();
+                data.DataContext = fish;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -84,10 +96,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void TaurusTabouleh_Click(object sender, RoutedEventArgs e)
         {
-            TaurusTabuleh side = new TaurusTabuleh();
-            DataContext = side;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(side);
+            if (sender is Button)
+            {
+                TaurusTabuleh side = new TaurusTabuleh();
+                SideSizecontrol data = new SideSizecontrol();
+                data.DataContext = side;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -97,10 +112,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void GeminiStuffedGrapeLeaves_Click(object sender, RoutedEventArgs e)
         {
-            GeminiStuffedGrapeLeaves side = new GeminiStuffedGrapeLeaves();
-            DataContext = side;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(side);
+            if (sender is Button)
+            {
+                GeminiStuffedGrapeLeaves side = new GeminiStuffedGrapeLeaves();
+                SideSizecontrol data = new SideSizecontrol();
+                data.DataContext = side;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -110,10 +128,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void SagittariusGreekSalad_Click(object sender, RoutedEventArgs e)
         {
-            SagittariusGreekSalad side = new SagittariusGreekSalad();
-            DataContext = side;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(side);
+            if (sender is Button)
+            {
+                SagittariusGreekSalad side = new SagittariusGreekSalad();
+                SideSizecontrol data = new SideSizecontrol();
+                data.DataContext = side;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -123,10 +144,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void AresFries_Click(object sender, RoutedEventArgs e)
         {
-            AriesFries side = new AriesFries();
-            DataContext = side;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(side);
+            if (sender is Button)
+            {
+                AriesFries side = new AriesFries();
+                SideSizecontrol data = new SideSizecontrol();
+                data.DataContext = side;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -136,10 +160,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void LibraLibation_Click(object sender, RoutedEventArgs e)
         {
-            LibraLibation drink = new LibraLibation();
-            DataContext = drink;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(drink);
+            if (sender is Button)
+            {
+                LibraLibation drink = new LibraLibation();
+                LibraLibationControl data = new LibraLibationControl();
+                data.DataContext = drink;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -149,10 +176,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void CapricornMountainTea_Click(object sender, RoutedEventArgs e)
         {
-            CapricornMountainTea drink = new CapricornMountainTea();
-            DataContext = drink;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(drink);
+            if (sender is Button)
+            {
+                CapricornMountainTea drink = new CapricornMountainTea();
+                CapricornMountainTeaControl data = new CapricornMountainTeaControl();
+                data.DataContext = drink;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -162,10 +192,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void AquariusIce_Click(object sender, RoutedEventArgs e)
         {
-            AquariusIce ice = new AquariusIce();
-            DataContext = ice;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(ice);
+            if (sender is Button)
+            {
+                AquariusIce ice = new AquariusIce();
+                AquariusIceControl data = new AquariusIceControl();
+                data.DataContext = ice;
+                MenuBorderItem.Child = data;
+            }
         }
 
         /// <summary>
@@ -175,10 +208,13 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void CancerHalvaCake_Click(object sender, RoutedEventArgs e)
         {
-            CancerHalvaCake cake = new CancerHalvaCake();
-            DataContext = cake;
-            MenuItemSelectionControl menu = new MenuItemSelectionControl();
-            menu.AddChild(cake);
+            if (sender is Button)
+            {
+                CancerHalvaCake cake = new CancerHalvaCake();
+                CancerHalvaCakeControl data = new CancerHalvaCakeControl();
+                data.DataContext = cake;
+                MenuBorderItem.Child = data;
+            }
         }
     }
 }
