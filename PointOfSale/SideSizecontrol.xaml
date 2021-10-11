@@ -3,9 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PointOfSale"
+             xmlns:local="clr-namespace:GyroScope.Data.Enums;assembly=GyroScope.Data"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="size" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="30">
+                            <RadioButton.RenderTransform>
+                                <ScaleTransform ScaleX="3" ScaleY="3"/>
+                            </RadioButton.RenderTransform>
+                        </RadioButton>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -21,14 +42,9 @@
         <TextBlock Grid.Row="0" Grid.Column="1" FontSize="60" TextAlignment="Center">
             Size
         </TextBlock>
-        <RadioButton Grid.Row="1" Grid.Column="1" FontSize="40">
-            Small
-        </RadioButton>
-        <RadioButton Grid.Row="2" Grid.Column="1" FontSize="40">
-            Medium
-        </RadioButton>
-        <RadioButton Grid.Row="3" Grid.Column="1" FontSize="40">
-            Large
-        </RadioButton>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="3">
+            <ListBox ItemsSource="{Binding Source={StaticResource size}}" SelectedItem="{Binding Path=Size}"/>
+
+        </StackPanel>
     </Grid>
 </UserControl>

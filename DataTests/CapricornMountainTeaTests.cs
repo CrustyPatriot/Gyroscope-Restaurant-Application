@@ -69,7 +69,7 @@ namespace GyroScope.DataTests
         {
             var drink = new CapricornMountainTea();
 
-            if (honey) { honey = false; }
+            if (!honey) { honey = true; }
             Assert.PropertyChanged(drink, propertyName, () =>
             {
                 drink.Honey = honey;
