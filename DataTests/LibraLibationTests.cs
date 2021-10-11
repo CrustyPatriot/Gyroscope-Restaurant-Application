@@ -134,7 +134,7 @@ namespace GyroScope.DataTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(drink);
         }
 
-        /*    /// <summary>
+            /// <summary>
             /// Checks to see if the INotifyPropertyChanged event changes the properties.
             /// </summary>
             /// <param name="flavor">The size to be changed.</param>
@@ -154,7 +154,7 @@ namespace GyroScope.DataTests
 
                 ///A quick hack to avoid not changing flavor when setting to the default flavor.
                 if (flavor == LibraLibationFlavor.Orangeade) { drink.Flavor = LibraLibationFlavor.SourCherry; }
-                Assert.PropertyChanged(flavor, propertyName, () =>
+                Assert.PropertyChanged(drink, propertyName, () =>
                 {
                     drink.Flavor = flavor;
                 });
@@ -174,11 +174,11 @@ namespace GyroScope.DataTests
 
                 ///A quick hack to avoid not changing flavor when setting to the default flavor.
                 if (sparkling == true) { sparkling = false; }
-                Assert.PropertyChanged(sparkling, propertyName, () =>
+                Assert.PropertyChanged(drink, propertyName, () =>
                 {
                     drink.Sparkling = sparkling;
                 });
-            } */
+            } 
 
         /// <summary>
         /// Checks to see if the to string override method is correct.

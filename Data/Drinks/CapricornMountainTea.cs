@@ -64,7 +64,6 @@ namespace GyroScope.Data.Drinks
                 {
                     _honey = value;
                     OnPropertyChanged(nameof(Honey));
-                    OnPropertyChanged(nameof(Calories));
                 }
             }
         }
