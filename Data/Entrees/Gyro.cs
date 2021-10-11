@@ -40,6 +40,7 @@ namespace GyroScope.Data.Entrees
                 {
                     _meat = value;
                     OnPropertyChanged(nameof(Calories));
+                    OnPropertyChanged(nameof(SpecialInstructions));
                 }
             }
         }

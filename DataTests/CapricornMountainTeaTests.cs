@@ -55,24 +55,26 @@ namespace GyroScope.DataTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(side);
         }
 
-          /// <summary>
-          /// Checks to see if the property changed changes the calories when honey changes.
-          /// </summary>
-          /// <param name="honey">The honey to change.</param>
-          /// <param name="propertyName">The name of the property to change.</param>
-          [Theory]
-          [InlineData(true, "Honey")]
-          [InlineData(false, "Honey")]
-          public void ShouldNotifyOfPropertyChangedWhenHoneyChanges(bool honey, string propertyName)
-          {
-              var drink = new CapricornMountainTea();
+        /// <summary>
+        /// Checks to see if the property changed changes the calories when honey changes.
+        /// </summary>
+        /// <param name="honey">The honey to change.</param>
+        /// <param name="propertyName">The name of the property to change.</param>
+        [Theory]
+        [InlineData(true, "Honey")]
+        [InlineData(false, "Honey")]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+    public void ShouldNotifyOfPropertyChangedWhenHoneyChanges(bool honey, string propertyName)
+        {
+            var drink = new CapricornMountainTea();
 
-              if (honey == true) { honey = false; }
-              Assert.PropertyChanged(drink, propertyName, () =>
-              {
-                  drink.Honey = honey;
-              });
-          }
+            if (honey) { honey = false; }
+            Assert.PropertyChanged(drink, propertyName, () =>
+            {
+                drink.Honey = honey;
+            });
+        }
 
         /// <summary>
         /// Checks to see if the To String override method is correct.

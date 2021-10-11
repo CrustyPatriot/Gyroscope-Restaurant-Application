@@ -134,51 +134,51 @@ namespace GyroScope.DataTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(drink);
         }
 
-            /// <summary>
-            /// Checks to see if the INotifyPropertyChanged event changes the properties.
-            /// </summary>
-            /// <param name="flavor">The size to be changed.</param>
-            /// <param name="propertyName">The name of the property to be changed.</param>
-            [Theory]
-            [InlineData(LibraLibationFlavor.Orangeade, "Name")]
-            [InlineData(LibraLibationFlavor.Orangeade, "Calories")]
-            [InlineData(LibraLibationFlavor.SourCherry, "Name")]
-            [InlineData(LibraLibationFlavor.SourCherry, "Calories")]
-            [InlineData(LibraLibationFlavor.Biral, "Name")]
-            [InlineData(LibraLibationFlavor.Biral, "Calories")]
-            [InlineData(LibraLibationFlavor.PinkLemonada, "Name")]
-            [InlineData(LibraLibationFlavor.PinkLemonada, "Calories")]
-            public void ShouldNotifyOfPropertyChangedWhenFlavorChanges(LibraLibationFlavor flavor, string propertyName)
+        /// <summary>
+        /// Checks to see if the INotifyPropertyChanged event changes the properties.
+        /// </summary>
+        /// <param name="flavor">The size to be changed.</param>
+        /// <param name="propertyName">The name of the property to be changed.</param>
+        [Theory]
+        [InlineData(LibraLibationFlavor.Orangeade, "Name")]
+        [InlineData(LibraLibationFlavor.Orangeade, "Calories")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Name")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Calories")]
+        [InlineData(LibraLibationFlavor.Biral, "Name")]
+        [InlineData(LibraLibationFlavor.Biral, "Calories")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Name")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Calories")]
+        public void ShouldNotifyOfPropertyChangedWhenFlavorChanges(LibraLibationFlavor flavor, string propertyName)
+        {
+            var drink = new LibraLibation();
+
+            ///A quick hack to avoid not changing flavor when setting to the default flavor.
+            if (flavor == LibraLibationFlavor.Orangeade) { drink.Flavor = LibraLibationFlavor.SourCherry; }
+            Assert.PropertyChanged(drink, propertyName, () =>
             {
-                var drink = new LibraLibation();
+                drink.Flavor = flavor;
+            });
+        }
 
-                ///A quick hack to avoid not changing flavor when setting to the default flavor.
-                if (flavor == LibraLibationFlavor.Orangeade) { drink.Flavor = LibraLibationFlavor.SourCherry; }
-                Assert.PropertyChanged(drink, propertyName, () =>
-                {
-                    drink.Flavor = flavor;
-                });
-            }
+        /// <summary>
+        /// Checks to see if the INotifyPropertyChanged event changes the properties.
+        /// </summary>
+        /// <param name="sparkling">The sparkling to be changed.</param>
+        /// <param name="propertyName">The name of the property to be changed.</param>
+        [Theory]
+        [InlineData(true, "Name")]
+        [InlineData(false, "Name")]
+        public void ShouldNotifyOfPropertyChangedWhenSparklingChanges(bool sparkling, string propertyName)
+        {
+            var drink = new LibraLibation();
 
-            /// <summary>
-            /// Checks to see if the INotifyPropertyChanged event changes the properties.
-            /// </summary>
-            /// <param name="sparkling">The sparkling to be changed.</param>
-            /// <param name="propertyName">The name of the property to be changed.</param>
-            [Theory]
-            [InlineData(true, "Name")]
-            [InlineData(false, "Name")]
-            public void ShouldNotifyOfPropertyChangedWhenSparklingChanges(bool sparkling, string propertyName)
+            ///A quick hack to avoid not changing flavor when setting to the default flavor.
+            if (sparkling) { sparkling = false; }
+            Assert.PropertyChanged(drink, propertyName, () =>
             {
-                var drink = new LibraLibation();
-
-                ///A quick hack to avoid not changing flavor when setting to the default flavor.
-                if (sparkling == true) { sparkling = false; }
-                Assert.PropertyChanged(drink, propertyName, () =>
-                {
-                    drink.Sparkling = sparkling;
-                });
-            } 
+                drink.Sparkling = sparkling;
+            });
+        } 
 
         /// <summary>
         /// Checks to see if the to string override method is correct.
