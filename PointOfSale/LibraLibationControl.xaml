@@ -3,9 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PointOfSale"
+             xmlns:local="clr-namespace:GyroScope.Data.Enums;assembly=GyroScope.Data"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="libraLibationFlavors" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:LibraLibationFlavor"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <!-- Data binds the size enum to the side size control application-->
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="30">
+                            <RadioButton.RenderTransform>
+                                <ScaleTransform ScaleX="2" ScaleY="2"/>
+                            </RadioButton.RenderTransform>
+                        </RadioButton>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -22,17 +44,8 @@
         <TextBlock Grid.Row="0" Grid.Column="1" FontSize="60" TextAlignment="Center">
             Flavors
         </TextBlock>
-        <!-- A button determining if the user would like the orangeade flavor-->
-        <RadioButton Grid.Row="1" Grid.Column="1" FontSize="40">
-            Orangeade
-        </RadioButton>
-        <!-- A button determining if the user would like the sour cherry flavor-->
-        <RadioButton Grid.Row="2" Grid.Column="1" FontSize="40">
-            SourCherry
-        </RadioButton>
-        <!-- A button determining if the user would like the biral flavor-->
-        <RadioButton Grid.Row="3" Grid.Column="1" FontSize="40">
-            Biral
-        </RadioButton>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="3" >
+            <ListBox ItemsSource="{Binding Source={StaticResource libraLibationFlavors}}" SelectedItem="{Binding LibraLibationFlavor}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

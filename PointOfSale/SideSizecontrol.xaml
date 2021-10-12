@@ -13,6 +13,7 @@
                 <x:Type TypeName="local:Size"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+        <!-- Data binds the size enum to the side size control application-->
         <Style TargetType="{x:Type ListBoxItem}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -44,7 +45,6 @@
         </TextBlock>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="3">
             <ListBox ItemsSource="{Binding Source={StaticResource size}}" SelectedItem="{Binding Path=Size}"/>
-
         </StackPanel>
     </Grid>
 </UserControl>
