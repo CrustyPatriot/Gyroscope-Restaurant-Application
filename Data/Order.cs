@@ -96,8 +96,11 @@ namespace GyroScope.Data
         /// <summary>
         /// The next order number in the lineup for orders.
         /// </summary>
-        private static nextOrderNumber = 1;
+        private static int nextOrderNumber = 1;
 
+        /// <summary>
+        /// Constructor for the order class.
+        /// </summary>
         public Order()
         {
             Number = nextOrderNumber;
@@ -110,7 +113,8 @@ namespace GyroScope.Data
         /// <param name="item">The item to add.</param>
         public void Add(IMenuItem item)
         {
-            
+            Order list = new Order();
+            list.Add(item);
         }
 
         /// <summary>
@@ -119,7 +123,8 @@ namespace GyroScope.Data
         /// <param name="item">The item to be removed.</param>
         public void Remove(IMenuItem item)
         {
-
+            Order list = new Order();
+            list.Remove(item);
         }
     }
 }
