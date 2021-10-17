@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// A class to represent the Pisces Fish dish.
     /// </summary>
-    public class PiscesFishDish : Entree, INotifyPropertyChanged
+    public class PiscesFishDish : Entree, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// The price for the pisces fish dish.
@@ -33,6 +34,11 @@ namespace GyroScope.Data.Entrees
                 yield return "";
             }
         }
+
+        /// <summary>
+        /// The name of the dish.
+        /// </summary>
+        public override string Name => "Pisces Fish Dish";
 
         /// <summary>
         /// Override to string method to be correct for the menu item.

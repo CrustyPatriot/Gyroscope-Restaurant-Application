@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Sides
 {
     /// <summary>
     /// A class to represent a side of Aries Fries.
     /// </summary>
-    public class AriesFries : Side, INotifyPropertyChanged
+    public class AriesFries : Side, INotifyPropertyChanged, IMenuItem
     {
 
         /// <summary>

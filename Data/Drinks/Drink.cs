@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Drinks
 {
     /// <summary>
     /// The base class for all drinks.
     /// </summary>
-    public abstract class Drink : INotifyPropertyChanged
+    public abstract class Drink : INotifyPropertyChanged, IMenuItem
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -23,6 +24,16 @@ namespace GyroScope.Data.Drinks
         /// The calories of the drink.
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// The special instructions.
+        /// </summary>
+        public abstract IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The name.
+        /// </summary>
+        public abstract string Name { get; }
 
         /// <summary>
         /// Helper method used to trigger a PropertyChanged event.

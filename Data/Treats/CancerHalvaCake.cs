@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PointOfSale;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// A class representing the "Cancer Halveh cake" treat.
     /// </summary>
-    public class CancerHalvaCake : Treat
+    public class CancerHalvaCake : Treat, IMenuItem
     {
 
         /// <summary>

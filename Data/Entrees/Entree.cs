@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// The base class for all entrees.
     /// </summary>
-    public abstract class Entree: INotifyPropertyChanged
+    public abstract class Entree: INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Notifies when a property of this class changes.
@@ -31,6 +32,11 @@ namespace GyroScope.Data.Entrees
         /// Special instructions for each 
         /// </summary>
         public virtual IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The name of the item.
+        /// </summary>
+        public abstract string Name { get; }
 
         /// <summary>
         /// Helper method used to trigger a PropertyChanged event.

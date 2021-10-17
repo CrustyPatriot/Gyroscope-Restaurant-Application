@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// A class to represent the Leo Lamb Gyro.
     /// </summary>
-    public class LeoLambGyro : Gyro, INotifyPropertyChanged
+    public class LeoLambGyro : Gyro, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Constructor for the leo lamb gyro.

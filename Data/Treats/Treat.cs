@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Treats 
 {
     /// <summary>
     /// The base class for all treats.
     /// </summary>
-    public abstract class Treat : INotifyPropertyChanged
+    public abstract class Treat : INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Notifies when a property of this class changes.
@@ -27,6 +28,16 @@ namespace GyroScope.Data.Treats
         /// The calories of the treat.
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// The special instructions.
+        /// </summary>
+        public IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The name.
+        /// </summary>
+        public string Name { get; }
 
         /// <summary>
         /// Helper method used to trigger a PropertyChanged event.

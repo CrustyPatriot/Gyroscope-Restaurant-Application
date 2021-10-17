@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Treats
 {
     /// <summary>
     /// A class representing "Aquarius Ice" - an itialian iced soda
     /// </summary>
-    public class AquariusIce : Treat, INotifyPropertyChanged
+    public class AquariusIce : Treat, INotifyPropertyChanged, IMenuItem
     {
 
         /// <summary>

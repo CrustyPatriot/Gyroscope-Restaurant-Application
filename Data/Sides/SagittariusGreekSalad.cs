@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Sides
 {
     /// <summary>
     /// A class to represent a side of Sagittarius greek salad.
     /// </summary>
-    public class SagittariusGreekSalad : Side, INotifyPropertyChanged
+    public class SagittariusGreekSalad : Side, INotifyPropertyChanged, IMenuItem
     {
 
         /// <summary>

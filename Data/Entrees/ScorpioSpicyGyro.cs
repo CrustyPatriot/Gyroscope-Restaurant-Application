@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// A class to represent the Scorpio Spicy Gyro.
     /// </summary>
-    public class ScorpioSpicyGyro : Gyro, INotifyPropertyChanged
+    public class ScorpioSpicyGyro : Gyro, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Constructor for the scorpio spicy gyro.

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Drinks
 {
     /// <summary>
     /// A class to represent the "Capricorn Mountain Tea" drink.
     /// </summary>
-    public class CapricornMountainTea : Drink, INotifyPropertyChanged
+    public class CapricornMountainTea : Drink, INotifyPropertyChanged, IMenuItem
     {
 
         /// <summary>
@@ -68,5 +69,15 @@ namespace GyroScope.Data.Drinks
                 }
             }
         }
+
+        /// <summary>
+        /// The special instructions.
+        /// </summary>
+        public override IEnumerable<string> SpecialInstructions => null;
+
+        /// <summary>
+        /// The name of the drink.
+        /// </summary>
+        public override string Name => "Capricorn Mountain Tea";
     }
 }

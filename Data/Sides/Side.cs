@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Sides
 {
     /// <summary>
     /// The base class for all sides.
     /// </summary>
-    public abstract class Side : INotifyPropertyChanged
+    public abstract class Side : INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Notifies when a property of this class changes.
@@ -50,6 +51,17 @@ namespace GyroScope.Data.Sides
         /// The calories of the side.
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// The special instructions.
+        /// </summary>
+        public IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The name.
+        /// </summary>
+        public string Name { get; }
+
 
         /// <summary>
         /// Helper method used to trigger a PropertyChanged event.

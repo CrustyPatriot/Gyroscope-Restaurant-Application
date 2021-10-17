@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// The class containing the Gyro instructions.
     /// </summary>
-    public class Gyro : Entree, INotifyPropertyChanged
+    public class Gyro : Entree, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// The price.
@@ -252,5 +253,10 @@ namespace GyroScope.Data.Entrees
                 }
             }
         }
+
+        /// <summary>
+        /// The name of the item.
+        /// </summary>
+        public override string Name { get; }
     }
 }

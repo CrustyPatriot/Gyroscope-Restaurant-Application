@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Entrees
 {
     /// <summary>
     /// A class to represent the Virgo Classic Gyro.
     /// </summary>
-    public class VirgoClassicGyro : Gyro, INotifyPropertyChanged
+    public class VirgoClassicGyro : Gyro, INotifyPropertyChanged, IMenuItem
     {
         /// <summary>
         /// Constructor for the virgo classic gyro.

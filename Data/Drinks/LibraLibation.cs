@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
+using PointOfSale;
 
 namespace GyroScope.Data.Drinks
 {
     /// <summary>
     /// The class to represent the "Libra Libation" drink.
     /// </summary>
-    public class LibraLibation : Drink, INotifyPropertyChanged
+    public class LibraLibation : Drink, INotifyPropertyChanged, IMenuItem
     {
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// The full name of the libra libation.
         /// </summary>
-        public string Name
+        public override string Name
         {
             get
             {
@@ -113,5 +114,10 @@ namespace GyroScope.Data.Drinks
                 }
             }
         }
+
+        /// <summary>
+        /// The special instructions.
+        /// </summary>
+        public override IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
     }
 }
