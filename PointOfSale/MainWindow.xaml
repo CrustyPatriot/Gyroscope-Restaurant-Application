@@ -52,11 +52,11 @@
             Cancel Order
         </Button>
         <!-- A button offering the user to select items for their order-->
-        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="3" FontSize="35">
+        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="3" FontSize="35" Click="Select_Click">
             Select Items
         </Button>
         <!-- A button offering the user to complete their order-->
-        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="6" FontSize="35">
+        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="6" FontSize="35" Click="Complete_Click">
             Complete Order
         </Button>
         <Border x:Name="menuItemSelection" Grid.ColumnSpan="8" Grid.RowSpan="6" Grid.Row="1" Grid.Column="0">

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using System.ComponentModel;
-using PointOfSale;
+using Gyroscope.Data;
 
 namespace GyroScope.Data.Drinks
 {

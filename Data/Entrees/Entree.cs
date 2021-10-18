@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-using PointOfSale;
+using Gyroscope.Data;
 
 namespace GyroScope.Data.Entrees
 {

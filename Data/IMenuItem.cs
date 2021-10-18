@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PointOfSale
+namespace Gyroscope.Data
 {
     /// <summary>
     /// Interface representing the menu items.

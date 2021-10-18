@@ -28,7 +28,19 @@
             </TextBlock>
         </StackPanel>
         <!-- The listview showing all items added to order-->
-        <ListView Grid.Row="1" Grid.RowSpan="5"/>
+        <ListView Grid.Row="1" Grid.RowSpan="5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=Name}"/>
+                            <TextBlock Text="{Binding Path=Price}"/>
+                            <TextBlock Text="{Binding Path=SpecialInstructions}"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListView>
         <StackPanel HorizontalAlignment="Center" Grid.Row="6" Grid.RowSpan="2">
             <!-- Textblock showing subtotal on the corresponding right side of the menu-->
             <TextBlock FontSize="25" TextAlignment="Center">
