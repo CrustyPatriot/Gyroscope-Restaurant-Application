@@ -37,7 +37,7 @@ namespace GyroScope.Data.Treats
         /// <summary>
         /// The name.
         /// </summary>
-        public string Name { get; }
+        public abstract string Name { get; }
 
         /// <summary>
         /// Helper method used to trigger a PropertyChanged event.

@@ -33,5 +33,10 @@ namespace GyroScope.Data.Treats
         /// The calories of the cancer halveh cake.
         /// </summary>
         public override uint Calories => 272;
+
+        /// <summary>
+        /// The name of the Cancer Halva Cake.
+        /// </summary>
+        public override string Name => this.ToString();
     }
 }

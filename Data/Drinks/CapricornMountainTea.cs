@@ -78,6 +78,6 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// The name of the drink.
         /// </summary>
-        public override string Name => "Capricorn Mountain Tea";
+        public override string Name => this.ToString();
     }
 }

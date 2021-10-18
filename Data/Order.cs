@@ -1,16 +1,27 @@
 ﻿using PointOfSale;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 
-namespace GyroScope.Data
+namespace GyroScope.Data.Order
 {
     /// <summary>
     /// Represents an order.
     /// </summary>
-    public class Order : IMenuItem, ICollection<IMenuItem>, INotifyCollectionChanged, INotifyPropertyChanged
+    public class Order : IMenuItem, ICollection, INotifyCollectionChanged, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Notifies when a property of this class changes.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Notifies when a collection of this class changes.
+        /// </summary>
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+
         /// <summary>
         /// The salex tax rate.
         /// </summary>
@@ -79,16 +90,6 @@ namespace GyroScope.Data
         public int Number { get; }
 
         /// <summary>
-        /// The property changed event.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// The collection changed event.
-        /// </summary>
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
-
-        /// <summary>
         /// The date and time the order was placed at.
         /// </summary>
         public DateTime PlacedAt { get; }
@@ -108,13 +109,36 @@ namespace GyroScope.Data
         }
 
         /// <summary>
+        /// Helper method used to trigger a PropertyChanged event.
+        /// </summary>
+        /// <param name="propertyName">The name of the property that's changing.</param>
+        protected void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Helper method used to trigger a CollectionChanged event.
+        /// </summary>
+        /// <param name="propertyName">The name of the property that's changing.</param>
+        protected void OnCollectionChanged(string collectionName)
+        {
+            this.CollectionChanged?.Invoke(this, new CollectionChangeEventArgs(collectionName));
+        }
+
+        /// <summary>
         /// Adds an item to the order.
         /// </summary>
         /// <param name="item">The item to add.</param>
         public void Add(IMenuItem item)
         {
-            Order list = new Order();
+            Order list = new();
             list.Add(item);
+            OnCollectionChanged(nameof(item));
+            OnPropertyChanged(nameof(Subtotal));
+            OnPropertyChanged(nameof(Tax));
+            OnPropertyChanged(nameof(Total));
+            OnPropertyChanged(nameof(Calories));
         }
 
         /// <summary>
@@ -123,8 +147,13 @@ namespace GyroScope.Data
         /// <param name="item">The item to be removed.</param>
         public void Remove(IMenuItem item)
         {
-            Order list = new Order();
+            Order list = new();
             list.Remove(item);
+            OnCollectionChanged(nameof(item));
+            OnPropertyChanged(nameof(Subtotal));
+            OnPropertyChanged(nameof(Tax));
+            OnPropertyChanged(nameof(Total));
+            OnPropertyChanged(nameof(Calories));
         }
     }
 }

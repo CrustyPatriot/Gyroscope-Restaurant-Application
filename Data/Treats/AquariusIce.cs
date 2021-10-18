@@ -29,7 +29,7 @@ namespace GyroScope.Data.Treats
         /// <summary>
         /// The name of this Aquarius Ice.
         /// </summary>
-        public string Name
+        public override string Name
         {
             get
             {
