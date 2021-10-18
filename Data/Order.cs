@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using Gyroscope.Data;
+
 namespace GyroScope.Data
 {
     /// <summary>
@@ -14,7 +15,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Collection of menu items for the order.
         /// </summary>
-        private List<IMenuItem> order = new();
+        private List<IMenuItem> order = new List<IMenuItem>();
 
         /// <summary>
         /// Notifies when a property of this class changes.
@@ -143,9 +144,9 @@ namespace GyroScope.Data
         /// Helper method used to trigger a CollectionChanged event.
         /// </summary>
         /// <param name="propertyName">The name of the property that's changing.</param>
-        protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+        protected virtual void OnCollectionChanged(IMenuItem item)
         {
-            this.CollectionChanged(this,e);
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangedAction.Add, menuItem));
         }
 
         /// <summary>

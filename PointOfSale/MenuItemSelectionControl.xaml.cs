@@ -13,6 +13,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
+        /// <summary>
+        /// Initializes an order.
+        /// </summary>
         public Order order => (Order)DataContext;
 
         /// <summary>

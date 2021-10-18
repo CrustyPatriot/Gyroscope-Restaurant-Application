@@ -23,6 +23,9 @@ namespace PointOfSale
     {
         public Order _order = new();
 
+        /// <summary>
+        /// Sets the order property.
+        /// </summary>
         public Order Order
         {
             get => _order;
