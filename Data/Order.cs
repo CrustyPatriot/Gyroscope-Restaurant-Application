@@ -27,10 +27,22 @@ namespace GyroScope.Data
         /// </summary>
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
+        private decimal _salesTaxRate = 0.09m;
+
         /// <summary>
         /// The salex tax rate.
         /// </summary>
-        public decimal SalesTaxRate { get; set; } = 0.09m;
+        public decimal SalesTaxRate
+        {
+            get
+            {
+                return 0.09m;
+            }
+            set
+            {
+                OnPropertyChanged(nameof(Total));
+            }
+        }
 
         /// <summary>
         /// The subtotal price of the order.

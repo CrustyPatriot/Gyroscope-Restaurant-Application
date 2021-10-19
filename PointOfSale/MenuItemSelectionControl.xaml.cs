@@ -16,7 +16,7 @@ namespace PointOfSale
         /// <summary>
         /// Initializes an order.
         /// </summary>
-        public Order _order => (Order)DataContext;
+        public Order NewOrder => (Order)DataContext;
 
         /// <summary>
         /// Initializes the menu item selection control
@@ -37,7 +37,7 @@ namespace PointOfSale
             {
                 VirgoClassicGyro gyro = new VirgoClassicGyro();              
                 GyroCustomControl data = new GyroCustomControl();
-                _order.Add(gyro);
+                NewOrder.Add(gyro);
                 data.DataContext = gyro;                
                 MenuBorderItem.Child = data;
             }
@@ -54,7 +54,7 @@ namespace PointOfSale
             {
                 LeoLambGyro gyro = new LeoLambGyro();              
                 GyroCustomControl data = new GyroCustomControl();
-                _order.Add(gyro);
+                NewOrder.Add(gyro);
                 data.DataContext = gyro;
                 MenuBorderItem.Child = data;
             }
@@ -71,7 +71,7 @@ namespace PointOfSale
             {
                 ScorpioSpicyGyro gyro = new ScorpioSpicyGyro();                
                 GyroCustomControl data = new GyroCustomControl();
-                _order.Add(gyro);
+                NewOrder.Add(gyro);
                 data.DataContext = gyro;
                 MenuBorderItem.Child = data;
             }
@@ -88,7 +88,7 @@ namespace PointOfSale
             {
                 PiscesFishDish fish = new PiscesFishDish();
                 PiscesFishDishControl data = new PiscesFishDishControl();
-                _order.Add(fish);
+                NewOrder.Add(fish);
                 data.DataContext = fish;
                 MenuBorderItem.Child = data;
             }
@@ -105,7 +105,7 @@ namespace PointOfSale
             {
                 TaurusTabuleh side = new TaurusTabuleh();
                 SideSizecontrol data = new SideSizecontrol();
-                _order.Add(side);
+                NewOrder.Add(side);
                 data.DataContext = side;
                 MenuBorderItem.Child = data;
             }
@@ -122,7 +122,7 @@ namespace PointOfSale
             {
                 GeminiStuffedGrapeLeaves side = new GeminiStuffedGrapeLeaves();
                 SideSizecontrol data = new SideSizecontrol();
-                _order.Add(side);
+                NewOrder.Add(side);
                 data.DataContext = side;
                 MenuBorderItem.Child = data;
             }
@@ -139,7 +139,7 @@ namespace PointOfSale
             {
                 SagittariusGreekSalad side = new SagittariusGreekSalad();
                 SideSizecontrol data = new SideSizecontrol();
-                _order.Add(side);
+                NewOrder.Add(side);
                 data.DataContext = side;
                 MenuBorderItem.Child = data;
             }
@@ -156,7 +156,7 @@ namespace PointOfSale
             {
                 AriesFries side = new AriesFries();
                 SideSizecontrol data = new SideSizecontrol();
-                _order.Add(side);
+                NewOrder.Add(side);
                 data.DataContext = side;
                 MenuBorderItem.Child = data;
             }
@@ -173,7 +173,7 @@ namespace PointOfSale
             {
                 LibraLibation drink = new LibraLibation();
                 LibraLibationControl data = new LibraLibationControl();
-                _order.Add(drink);
+                NewOrder.Add(drink);
                 data.DataContext = drink;
                 MenuBorderItem.Child = data;
             }
@@ -190,7 +190,7 @@ namespace PointOfSale
             {
                 CapricornMountainTea drink = new CapricornMountainTea();
                 CapricornMountainTeaControl data = new CapricornMountainTeaControl();
-                _order.Add(drink);
+                NewOrder.Add(drink);
                 data.DataContext = drink;
                 MenuBorderItem.Child = data;
             }
@@ -207,7 +207,7 @@ namespace PointOfSale
             {
                 AquariusIce ice = new AquariusIce();
                 AquariusIceControl data = new AquariusIceControl();
-                _order.Add(ice);
+                NewOrder.Add(ice);
                 data.DataContext = ice;
                 MenuBorderItem.Child = data;
             }
@@ -224,7 +224,7 @@ namespace PointOfSale
             {
                 CancerHalvaCake cake = new CancerHalvaCake();
                 CancerHalvaCakeControl data = new CancerHalvaCakeControl();
-                _order.Add(cake);
+                NewOrder.Add(cake);
                 data.DataContext = cake;
                 MenuBorderItem.Child = data;
             }
