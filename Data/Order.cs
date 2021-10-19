@@ -39,7 +39,7 @@ namespace GyroScope.Data
         {
             get
             {
-                return 0.09m;
+                return _salesTaxRate;
             }
             set
             {
@@ -116,7 +116,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Backing field for number.
         /// </summary>
-        private int _number = 0;
+        private int _number;
 
         /// <summary>
         /// The order number.
@@ -135,6 +135,7 @@ namespace GyroScope.Data
                     OnPropertyChanged(nameof(Count));
                     OnPropertyChanged(nameof(Subtotal));
                     OnPropertyChanged(nameof(Total));
+                    OnPropertyChanged(nameof(SalesTaxRate));
                 }
             }
         }
