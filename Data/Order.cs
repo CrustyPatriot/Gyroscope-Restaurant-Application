@@ -125,7 +125,7 @@ namespace GyroScope.Data
         {
             get
             {
-
+                return _number;
             }
             set
             {
