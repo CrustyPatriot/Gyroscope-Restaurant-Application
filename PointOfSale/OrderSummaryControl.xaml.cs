@@ -37,7 +37,7 @@ namespace PointOfSale
         /// <summary>
         /// Initializes an order and sets it as the data context.
         /// </summary>
-        public Order order => (Order)DataContext;
+        public Order _order => (Order)DataContext;
 
         /// <summary>
         /// Event handler for the remove item button.
@@ -48,7 +48,7 @@ namespace PointOfSale
         {
             if (sender is Button button)
             {
-                order.Remove((IMenuItem)button.DataContext);
+                _order.Remove((IMenuItem)button.DataContext);
             }
         }
 

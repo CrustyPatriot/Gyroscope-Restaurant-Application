@@ -15,7 +15,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Collection of menu items for the order.
         /// </summary>
-        private List<IMenuItem> order = new List<IMenuItem>();
+        private List<IMenuItem> _order = new List<IMenuItem>();
 
         /// <summary>
         /// Notifies when a property of this class changes.
@@ -40,7 +40,7 @@ namespace GyroScope.Data
             get
             {
                 decimal sum = 0m;
-                foreach(IMenuItem item in order)
+                foreach(IMenuItem item in _order)
                 {
                     sum += item.Price;
                 }
@@ -56,7 +56,7 @@ namespace GyroScope.Data
             get
             {
                 uint calories = 0;
-                foreach (IMenuItem item in order)
+                foreach (IMenuItem item in _order)
                 {
                     calories += item.Calories;
                 }
@@ -92,7 +92,7 @@ namespace GyroScope.Data
         /// <summary>
         /// The next order number in the lineup for orders.
         /// </summary>
-        private static int nextOrderNumber = 1;
+        private static int _nextOrderNumber = 1;
 
         /// <summary>
         /// The order number.
@@ -112,7 +112,7 @@ namespace GyroScope.Data
         /// <summary>
         /// The order count.
         /// </summary>
-        public int Count => order.Count;
+        public int Count => _order.Count;
 
         /// <summary>
         /// Checks to see if the order is synchronized.
@@ -134,8 +134,8 @@ namespace GyroScope.Data
         /// </summary>
         public Order()
         {
-            Number = nextOrderNumber;
-            nextOrderNumber++;
+            Number = _nextOrderNumber;
+            _nextOrderNumber++;
             _placedAt = DateTime.Now;
         }
 
@@ -151,7 +151,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Helper method used to trigger a CollectionChanged event.
         /// </summary>
-        /// <param name="propertyName">The name of the property that's changing.</param>
+        /// <param name="e">The name of the property that's changing.</param>
         protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
         {
             this.CollectionChanged(this, e);
@@ -163,9 +163,9 @@ namespace GyroScope.Data
         /// <param name="item">The item to add.</param>
         public void Add(IMenuItem item)
         {
-            order.Add(item);
+            _order.Add(item);
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
-            ((INotifyPropertyChanged)item).PropertyChanged += helperPropertyChanged;
+            ((INotifyPropertyChanged)item).PropertyChanged += HelperPropertyChanged;
             OnPropertyChanged(nameof(Subtotal));
             OnPropertyChanged(nameof(Tax));
             OnPropertyChanged(nameof(Total));
@@ -173,17 +173,20 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// Removes an item from the order.
+        /// Removes the item.
         /// </summary>
-        /// <param name="item">The item to be removed.</param>
+        /// <param name="item">The item.</param>
+        /// <returns>
+        /// Returns true if item is in the list, otherwise false.
+        /// </returns>
         public bool Remove(IMenuItem item)
         {
-            if (order.Contains(item))
+            if (_order.Contains(item))
             {
-                int index = order.IndexOf(item);
-                order.Remove(item);
+                int index = _order.IndexOf(item);
+                _order.Remove(item);
                 OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item, index));
-                ((INotifyPropertyChanged)item).PropertyChanged += helperPropertyChanged;
+                ((INotifyPropertyChanged)item).PropertyChanged += HelperPropertyChanged;
                 OnPropertyChanged(nameof(Subtotal));
                 OnPropertyChanged(nameof(Tax));
                 OnPropertyChanged(nameof(Total));
@@ -198,7 +201,7 @@ namespace GyroScope.Data
         /// </summary>
         /// <param name="sender">The object.</param>
         /// <param name="e">The event.</param>
-        protected virtual void helperPropertyChanged(object sender, PropertyChangedEventArgs e)
+        protected virtual void HelperPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName.Equals("Price"))
             {
@@ -217,7 +220,7 @@ namespace GyroScope.Data
         /// </summary>
         public void Clear()
         {
-            order.Clear();
+            _order.Clear();
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
             OnPropertyChanged(nameof(Subtotal));
             OnPropertyChanged(nameof(Tax));
@@ -234,7 +237,7 @@ namespace GyroScope.Data
         /// </returns>
         public bool Contains(IMenuItem item)
         {
-            return order.Contains(item);
+            return _order.Contains(item);
         }
 
         /// <summary>
@@ -244,7 +247,7 @@ namespace GyroScope.Data
         /// <param name="arrayIndex">The index</param>
         public void CopyTo(IMenuItem[] array, int arrayIndex)
         {
-            order.CopyTo(array, arrayIndex);
+            _order.CopyTo(array, arrayIndex);
         }
 
         /// <summary>
@@ -255,7 +258,7 @@ namespace GyroScope.Data
         /// </returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return order.GetEnumerator();
+            return _order.GetEnumerator();
         }
 
         
@@ -267,7 +270,7 @@ namespace GyroScope.Data
         /// </returns>
         public IEnumerator<IMenuItem> GetEnumerator()
         {
-            return order.GetEnumerator();
+            return _order.GetEnumerator();
         }
     }
 }
