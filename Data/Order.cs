@@ -48,7 +48,6 @@ namespace GyroScope.Data
                     _salesTaxRate = value;
                     OnPropertyChanged(nameof(Total));
                     OnPropertyChanged(nameof(Tax));
-                    OnPropertyChanged(nameof(Price));
                 }
             }
         }
