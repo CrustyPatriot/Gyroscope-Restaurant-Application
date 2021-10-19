@@ -8,6 +8,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <ObjectDataProvider x:Key="size" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
         <ObjectDataProvider x:Key="aquariusIceFlavors" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="local:AquariusIceFlavor"/>
@@ -18,11 +23,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="30">
-                            <RadioButton.RenderTransform>
-                                <ScaleTransform ScaleX="2" ScaleY="2"/>
-                            </RadioButton.RenderTransform>
-                        </RadioButton>
+                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -32,20 +33,28 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <!-- The Text Box labeling the various flavors-->
-        <TextBlock Grid.Row="0" Grid.Column="0" FontSize="60" TextAlignment="Center" Grid.ColumnSpan="3">
-            Aquarius Ice Flavors
+        <TextBlock Grid.ColumnSpan="2">
+            Aquarius Ice Customization
         </TextBlock>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="3" >
-            <ListBox ItemsSource="{Binding Source={StaticResource aquariusIceFlavors}}" SelectedItem="{Binding AquariusIceFlavor}"/>
+
+        <TextBlock Grid.Row="1">
+            Sizes
+        </TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1">
+            Flavors
+        </TextBlock>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+            <ListBox ItemsSource="{Binding Source={StaticResource size}}" SelectedItem="{Binding Size}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" >
+            <ListBox ItemsSource="{Binding Source={StaticResource aquariusIceFlavors}}" SelectedItem="{Binding Flavor}"/>
         </StackPanel>
     </Grid>
 </UserControl>

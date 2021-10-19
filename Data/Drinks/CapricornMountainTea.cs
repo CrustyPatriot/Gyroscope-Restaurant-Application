@@ -73,7 +73,16 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// The special instructions.
         /// </summary>
-        public override IEnumerable<string> SpecialInstructions => null;
+        public override IEnumerable<string> SpecialInstructions
+        {
+            get
+            {
+                if (Honey)
+                {
+                    yield return "Add Honey";
+                }
+            }
+        }
 
         /// <summary>
         /// The name of the drink.

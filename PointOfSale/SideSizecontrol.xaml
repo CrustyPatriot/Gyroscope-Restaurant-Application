@@ -18,32 +18,21 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="30">
-                            <RadioButton.RenderTransform>
-                                <ScaleTransform ScaleX="3" ScaleY="3"/>
-                            </RadioButton.RenderTransform>
-                        </RadioButton>
+                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="60" TextAlignment="Center">
-            Size
-        </TextBlock>
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="3">
+
+        <TextBlock Text="{Binding Path=Name, StringFormat=Customize {0}}"/>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
             <ListBox ItemsSource="{Binding Source={StaticResource size}}" SelectedItem="{Binding Path=Size}"/>
         </StackPanel>
     </Grid>

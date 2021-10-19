@@ -29,13 +29,7 @@ namespace GyroScope.Data.Treats
         /// <summary>
         /// The name of this Aquarius Ice.
         /// </summary>
-        public override string Name
-        {
-            get
-            {
-                return $"{Size} {Flavor} Aquarius Ice";
-            }
-        }
+        public override string Name => ToString();
 
         /// <summary>
         /// Backing field for size.

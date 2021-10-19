@@ -18,11 +18,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="30">
-                            <RadioButton.RenderTransform>
-                                <ScaleTransform ScaleX="2" ScaleY="2"/>
-                            </RadioButton.RenderTransform>
-                        </RadioButton>
+                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -32,20 +28,31 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <!-- Text box showing the flavor portion customization of the libra libation control-->
-        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="60" TextAlignment="Center">
+        <TextBlock Grid.ColumnSpan="2">
+            Libra Libation Customization
+        </TextBlock>
+
+        <TextBlock Grid.Row="1" Grid.Column="1">
+            Sparkling?
+        </TextBlock>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
+            <CheckBox Content="Sparkling" IsChecked="{Binding Sparkling}"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" Grid.Column="0">
             Flavors
         </TextBlock>
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="3" >
-            <ListBox ItemsSource="{Binding Source={StaticResource libraLibationFlavors}}" SelectedItem="{Binding LibraLibationFlavor}"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
+            <ListBox ItemsSource="{Binding Source={StaticResource libraLibationFlavors}}" SelectedItem="{Binding Flavor}"/>
         </StackPanel>
     </Grid>
 </UserControl>

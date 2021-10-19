@@ -39,6 +39,17 @@ namespace GyroScope.Data.Entrees
         }
 
         /// <summary>
+        /// Gets the name of the item.
+        /// </summary>
+        public override string Name
+        {
+            get
+            {
+                return ToString();
+            }
+        }
+
+        /// <summary>
         /// The price of the scorpio spicy gyro.
         /// </summary>
         public override decimal Price => 6.20m;

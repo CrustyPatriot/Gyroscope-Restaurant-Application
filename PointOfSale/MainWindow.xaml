@@ -9,61 +9,54 @@
     <Grid>
         <Grid.Resources>
             <Style TargetType="Button">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="Margin" Value="25,15"/>
                 <Style.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="20"/>
+                        <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </Style.Resources>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="TextAlignment" Value="Center"/>
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <!-- A text block showing the overall point of sale system for gyroscope-->
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" FontWeight="Bold" TextAlignment="Left" FontSize="40">
+        <TextBlock Grid.ColumnSpan="3" TextAlignment="Center">
                 GyroScope Point of Sale
         </TextBlock>
         <!-- A button offering the user to cancel the order-->
-        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="0" FontSize="35" Click="Cancel_Click">
+        <Button Grid.Row="2" Grid.Column="0" Click="Cancel_Click">
             Cancel Order
         </Button>
         <!-- A button offering the user to select items for their order-->
-        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="3" FontSize="35" Click="Select_Click">
+        <Button Grid.Row="2" Grid.Column="1" Click="Select_Click">
             Select Items
         </Button>
         <!-- A button offering the user to complete their order-->
-        <Button Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="6" FontSize="35" Click="Complete_Click">
+        <Button Grid.Row="2" Grid.Column="2" Click="Complete_Click">
             Complete Order
         </Button>
-        <Border x:Name="menuItemSelection" Grid.ColumnSpan="8" Grid.RowSpan="6" Grid.Row="1" Grid.Column="0">
+        <Border x:Name="menuItemSelection" Grid.Row="1" Grid.ColumnSpan="3">
         <!-- The menu selection control showing all items to add to order-->
         <local:MenuItemSelectionControl/>
         </Border>
-        <!-- The order selection control showing the order summary including price and items-->
-        <local:OrderSummaryControl Grid.ColumnSpan="5" Grid.RowSpan="7" Grid.Row="1" Grid.Column="9"/>
+        <Border x:Name="orderSummary" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" Margin="20">
+            <local:OrderSummaryControl/>
+        </Border>
     </Grid>
 </Window>

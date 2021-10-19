@@ -21,6 +21,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Initializes the order.
+        /// </summary>
         public Order _order = new();
 
         /// <summary>
@@ -45,7 +48,7 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = Order;
+            DataContext = new Order();
         }
 
         /// <summary>
@@ -56,6 +59,7 @@ namespace PointOfSale
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             menuItemSelection.Child = new MenuItemSelectionControl();
+            Order = new Order();
 
         }
 
@@ -66,7 +70,8 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void Complete_Click(object sender, RoutedEventArgs e)
         {
-            _order = new Order();
+            menuItemSelection.Child = new MenuItemSelectionControl();
+            Order = new Order();
         }
 
         /// <summary>
@@ -76,7 +81,7 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void Select_Click(object sender, RoutedEventArgs e)
         {
-            _order = new Order();
+            menuItemSelection.Child = new MenuItemSelectionControl();
         }
     }
 }

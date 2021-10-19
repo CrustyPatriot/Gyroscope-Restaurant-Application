@@ -7,24 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <!-- Text box describing the capricorn mountain tea customization options-->
         <TextBlock Grid.Row="0" Grid.Column="0" FontSize="40" TextAlignment="Center" Grid.ColumnSpan="3">
             Capricorn Mountain Tea
         </TextBlock>
-        <!-- Checkbox determining if the user would like honey in their tea or not-->
-        <CheckBox Grid.Row="1" Grid.Column="1" FontSize="30" HorizontalAlignment="Center" Grid.ColumnSpan="1" VerticalAlignment="Bottom">
-            Honey
-        </CheckBox>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <CheckBox Content="Honey" IsChecked="{Binding Honey}"/>
+            <ListBox ItemsSource="{Binding Path=SpecialInstructions}"/>
+        </StackPanel>
     </Grid>
 </UserControl>
