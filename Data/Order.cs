@@ -116,7 +116,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Backing field for number.
         /// </summary>
-        private int _number;
+        private int _number = 0;
 
         /// <summary>
         /// The order number.
