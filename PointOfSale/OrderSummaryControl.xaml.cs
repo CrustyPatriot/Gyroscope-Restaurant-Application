@@ -37,7 +37,7 @@ namespace PointOfSale
         /// <summary>
         /// Initializes an order and sets it as the data context.
         /// </summary>
-        public Order _order => (Order)DataContext;
+        public Order NewOrder => (Order)DataContext;
 
         /// <summary>
         /// Event handler for the remove item button.
@@ -48,7 +48,7 @@ namespace PointOfSale
         {
             if (sender is Button button)
             {
-                _order.Remove((IMenuItem)button.DataContext);
+                NewOrder.Remove((IMenuItem)button.DataContext);
             }
         }
 
@@ -59,16 +59,16 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void EditItem(object sender, RoutedEventArgs e)
         {
-            DependencyObject _object = this;
+            DependencyObject newObject = this;
             do
             {
-                _object = LogicalTreeHelper.GetParent(_object);
+                newObject = LogicalTreeHelper.GetParent(newObject);
             }
-            while (!(_object is null || _object is MainWindow));
+            while (!(newObject is null || newObject is MainWindow));
 
-            if (_object is MainWindow)
+            if (newObject is MainWindow)
             {
-                MainWindow window = (MainWindow)_object;
+                MainWindow window = (MainWindow)newObject;
 
                 if (list.SelectedValue is Gyro)
                 {

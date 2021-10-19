@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// A class representing the "Cancer Halveh cake" treat.
     /// </summary>
-    public class CancerHalvaCake : Treat, IMenuItem
+    public class CancerHalvaCake : Treat, IMenuItem, INotifyPropertyChanged
     {
 
         /// <summary>
