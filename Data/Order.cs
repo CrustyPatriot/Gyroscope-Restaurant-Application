@@ -27,6 +27,9 @@ namespace GyroScope.Data
         /// </summary>
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
+        /// <summary>
+        /// Backing field for sales tax rate.
+        /// </summary>
         private decimal _salesTaxRate = 0.09m;
 
         /// <summary>
@@ -40,7 +43,11 @@ namespace GyroScope.Data
             }
             set
             {
-                OnPropertyChanged(nameof(Total));
+                if (_salesTaxRate != value)
+                {
+                    _salesTaxRate = value;
+                    OnPropertyChanged(nameof(Total));
+                }
             }
         }
 
@@ -107,9 +114,30 @@ namespace GyroScope.Data
         private static int _nextOrderNumber = 1;
 
         /// <summary>
+        /// Backing field for number.
+        /// </summary>
+        private int _number;
+
+        /// <summary>
         /// The order number.
         /// </summary>
-        public int Number { get; set; }
+        public int Number
+        {
+            get
+            {
+
+            }
+            set
+            {
+                if (_number != value)
+                {
+                    _number = value;
+                    OnPropertyChanged(nameof(Count));
+                    OnPropertyChanged(nameof(Subtotal));
+                    OnPropertyChanged(nameof(Total));
+                }
+            }
+        }
 
         /// <summary>
         /// Private backing field for the placed at property for the date.
