@@ -40,7 +40,7 @@ namespace GyroScope.Data
             get
             {
                 decimal sum = 0m;
-                foreach(IMenuItem item in this)
+                foreach(IMenuItem item in order)
                 {
                     sum += item.Price;
                 }
@@ -56,7 +56,7 @@ namespace GyroScope.Data
             get
             {
                 uint calories = 0;
-                foreach (IMenuItem item in this)
+                foreach (IMenuItem item in order)
                 {
                     calories += item.Calories;
                 }
@@ -90,19 +90,29 @@ namespace GyroScope.Data
         public string Name { get; }
 
         /// <summary>
+        /// The next order number in the lineup for orders.
+        /// </summary>
+        private static int nextOrderNumber = 1;
+
+        /// <summary>
         /// The order number.
         /// </summary>
-        public int Number { get; }
+        public int Number { get; set; }
+
+        /// <summary>
+        /// Private backing field for the placed at property for the date.
+        /// </summary>
+        private DateTime _placedAt;
 
         /// <summary>
         /// The date and time the order was placed at.
         /// </summary>
-        public DateTime PlacedAt { get; }
+        public DateTime PlacedAt => _placedAt;
 
         /// <summary>
         /// The order count.
         /// </summary>
-        public int Count => Number;
+        public int Count => order.Count;
 
         /// <summary>
         /// Checks to see if the order is synchronized.
@@ -114,12 +124,10 @@ namespace GyroScope.Data
         /// </summary>
         public object SyncRoot { get; }
 
-        public bool IsReadOnly => true;
-
         /// <summary>
-        /// The next order number in the lineup for orders.
+        /// Checks to see if the order is read only.
         /// </summary>
-        private static int nextOrderNumber = 1;
+        public bool IsReadOnly => true;   
 
         /// <summary>
         /// Constructor for the order class.
@@ -128,7 +136,7 @@ namespace GyroScope.Data
         {
             Number = nextOrderNumber;
             nextOrderNumber++;
-            PlacedAt = DateTime.Now;
+            _placedAt = DateTime.Now;
         }
 
         /// <summary>
@@ -144,9 +152,9 @@ namespace GyroScope.Data
         /// Helper method used to trigger a CollectionChanged event.
         /// </summary>
         /// <param name="propertyName">The name of the property that's changing.</param>
-        protected virtual void OnCollectionChanged(IMenuItem item)
+        protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangedAction.Add, menuItem));
+            this.CollectionChanged(this, e);
         }
 
         /// <summary>
@@ -157,6 +165,7 @@ namespace GyroScope.Data
         {
             order.Add(item);
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
+            ((INotifyPropertyChanged)item).PropertyChanged += helperPropertyChanged;
             OnPropertyChanged(nameof(Subtotal));
             OnPropertyChanged(nameof(Tax));
             OnPropertyChanged(nameof(Total));
@@ -174,6 +183,7 @@ namespace GyroScope.Data
                 int index = order.IndexOf(item);
                 order.Remove(item);
                 OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item, index));
+                ((INotifyPropertyChanged)item).PropertyChanged += helperPropertyChanged;
                 OnPropertyChanged(nameof(Subtotal));
                 OnPropertyChanged(nameof(Tax));
                 OnPropertyChanged(nameof(Total));
@@ -183,6 +193,28 @@ namespace GyroScope.Data
             return false;
         }
 
+        /// <summary>
+        /// Helper method for the notify property changed event.
+        /// </summary>
+        /// <param name="sender">The object.</param>
+        /// <param name="e">The event.</param>
+        protected virtual void helperPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Equals("Price"))
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tax"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
+            }
+            if (e.PropertyName.Equals("Calories"))
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
+
+        /// <summary>
+        /// Clears the data from the order.
+        /// </summary>
         public void Clear()
         {
             order.Clear();
@@ -226,6 +258,13 @@ namespace GyroScope.Data
             return order.GetEnumerator();
         }
 
+        
+        /// <summary>
+        /// Extra GetEnumerator method necessary for the ICollection. NOT USED.
+        /// </summary>
+        /// <returns>
+        /// Returns an enumerator.
+        /// </returns>
         public IEnumerator<IMenuItem> GetEnumerator()
         {
             return order.GetEnumerator();

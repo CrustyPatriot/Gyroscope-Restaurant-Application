@@ -1,12 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Xunit;
+using GyroScope.Data.Enums;
+using GyroScope.Data.Treats;
+using System.ComponentModel;
+
 
 namespace GyroScope.DataTests
 {
-    class OrderUnitTests
+    /// <summary>
+    /// Unit tests for the Order class.
+    /// </summary>
+    public class OrderUnitTests
     {
+
     }
 }
