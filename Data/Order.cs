@@ -15,7 +15,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Collection of menu items for the order.
         /// </summary>
-        private List<IMenuItem> _order = new List<IMenuItem>();
+        public List<IMenuItem> _order = new List<IMenuItem>();
 
         /// <summary>
         /// Notifies when a property of this class changes.
