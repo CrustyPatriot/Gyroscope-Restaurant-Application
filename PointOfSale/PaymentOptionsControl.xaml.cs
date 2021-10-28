@@ -35,7 +35,45 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void CreditDebit_Click(object sender, RoutedEventArgs e)
         {
+            if (DataContext is Order order)
+            {
+                PaymentOptionModelView view = new PaymentOptionModelView();
+                view.CreditDebitCard = true;
+                view.Cash = false;
+                view.Order = order;
+                CardTransactionResult result = CardReader.RunCard((double)view.Total);
+                if (result == CardTransactionResult.Approved)
+                {
+                    MessageBox.Show("Transaction Approved");
+                    view.Print();
+                    DependencyObject parent = this;
+                    do
+                    {
+                        parent = LogicalTreeHelper.GetParent(parent);
+                    }
+                    while (!(parent is null || parent is MainWindow));
 
+                    MainWindow window = parent as MainWindow;
+                    window.DataContext = new Order();
+                    ReturnToOrder_Click(sender, e);
+                }
+                if (result == CardTransactionResult.Declined)
+                {
+                    MessageBox.Show("Transaction Declined");
+                }
+                if (result == CardTransactionResult.IncorrectPin)
+                {
+                    MessageBox.Show("Incorrect Pin");
+                }
+                if (result == CardTransactionResult.InsufficientFunds)
+                {
+                    MessageBox.Show("Insufficient funds");
+                }
+                if (result == CardTransactionResult.ReadError)
+                {
+                    MessageBox.Show("Card read error. Try again");
+                }
+            }
         }
 
         /// <summary>
@@ -60,7 +98,12 @@ namespace PointOfSale
             {
                 if (button.Name == "cash" && DataContext is Order order)
                 {
-                    var temp = new CashPayment();
+                    var temp = new CashPaymentcontrol();
+                    PaymentOptionModelView view = new PaymentOptionModelView();
+                    temp.DataContext = view;
+                    view.Order = order;
+                    view.AmountDue = view.Total;
+                    window.menuItemSelection.Child = temp;
                 }
             }
         }
@@ -72,7 +115,15 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void ReturnToOrder_Click(object sender, RoutedEventArgs e)
         {
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            }
+            while (!(parent is null || parent is MainWindow));
 
+            MainWindow window = parent as MainWindow;
+            window.menuItemSelection.Child = new MenuItemSelectionControl();
         }
     }
 }

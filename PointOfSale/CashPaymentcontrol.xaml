@@ -160,6 +160,6 @@
         <TextBlock Grid.Column="6" Grid.Row="10" FontFamily="Globaluserinterface" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Text="Change &#x0a; Owed "/>
         <Rectangle Fill="Green" Grid.Row="10" Grid.Column="7" Grid.ColumnSpan="2"/>
         <TextBlock Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="10" FontFamily="Globaluserinterface" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Foreground="White" Text="{Binding Path=ChangeDue, StringFormat={}{0:c}}"/>
-        <Button Grid.Column="9" Grid.Row="10" FontFamily="Globaluserinterface" FontSize="14" FontWeight="Medium" Content="Finalize &#x0a;  Sale" Click="FinalizeSale"/>
+        <Button Grid.Column="9" Grid.Row="10" FontFamily="Globaluserinterface" FontSize="14" FontWeight="Medium" Content="Finalize &#x0a;  Sale" Click="FinalizeSale_Click"/>
     </Grid>
 </UserControl>

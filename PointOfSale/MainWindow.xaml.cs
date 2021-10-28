@@ -1,18 +1,6 @@
 ﻿using GyroScope.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PointOfSale
 {
@@ -71,7 +59,23 @@ namespace PointOfSale
         private void Complete_Click(object sender, RoutedEventArgs e)
         {
             menuItemSelection.Child = new MenuItemSelectionControl();
-            Order = new Order();
+            DependencyObject parent = this;
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            }
+            while (!(parent is null || parent is MainWindow));
+
+            MainWindow nextBorder = parent as MainWindow;
+            parent = nextBorder;
+            if (sender is Button button && button.Name == "paymentmethod")
+            {
+                if (DataContext is Order)
+                {
+                    PaymentOptions temp = new PaymentOptions();
+                    nextBorder.menuItemSelection.Child = temp;
+                }
+            }
         }
 
         /// <summary>
