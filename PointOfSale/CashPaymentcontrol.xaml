@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="PointOfSale.CashPaymentcontrol"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--Top Row Text and return to order button-->
+        <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="14" Content="Return &#x0a; To Order" Click="ReturnToOrder"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"  VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Text="From &#x0a; Customer"/>
+        <TextBlock Grid.Row="0" Grid.Column="4"  VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Text="Change"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="3" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Text="From &#x0a; Customer"/>
+        <TextBlock Grid.Row="0" Grid.Column="9"  VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Text="Change"/>
+
+        <!--Dollar amount text-->
+        <Rectangle Stroke="White" Grid.Row="1" Fill="Green"></Rectangle>
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">$100</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Row="2" Fill="Green"></Rectangle>
+        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">$50</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Row="3" Fill="Green"></Rectangle>
+        <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">$20</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Row="4" Fill="Green"></Rectangle>
+        <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">$10</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Row="5" Fill="Green"></Rectangle>
+        <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">$5</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Row="6" Fill="Green"></Rectangle>
+        <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">$2</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Row="7" Fill="Green"></Rectangle>
+        <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">$1</TextBlock>
+
+        <!--Coin amount text-->
+        <Rectangle Stroke="White" Grid.Column="5" Grid.Row="1" Fill="Gold"></Rectangle>
+        <TextBlock Grid.Row="1" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">$1</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Column="5" Grid.Row="2" Fill="Gold"></Rectangle>
+        <TextBlock Grid.Row="2" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">50&#162;</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Column="5" Grid.Row="3" Fill="Gold"></Rectangle>
+        <TextBlock Grid.Row="3" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">25&#162;</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Column="5" Grid.Row="4" Fill="Gold"></Rectangle>
+        <TextBlock Grid.Row="4" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">10&#162;</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Column="5" Grid.Row="5" Fill="Gold"></Rectangle>
+        <TextBlock Grid.Row="5" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">5&#162;</TextBlock>
+
+        <Rectangle Stroke="White" Grid.Column="5" Grid.Row="6" Fill="Gold"></Rectangle>
+        <TextBlock Grid.Row="6" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="White">1&#162;</TextBlock>
+
+        <!--Dollar + Buttons-->
+        <Button Grid.Column="1" Grid.Row="1" FontFamily="Globaluserinterface" FontSize="50" Click="OneHundred">+</Button>
+        <Button Grid.Column="1" Grid.Row="2" FontFamily="Globaluserinterface" FontSize="50" Click="Fifty">+</Button>
+        <Button Grid.Column="1" Grid.Row="3" FontFamily="Globaluserinterface" FontSize="50" Click="Twenty">+</Button>
+        <Button Grid.Column="1" Grid.Row="4" FontFamily="Globaluserinterface" FontSize="50" Click="Ten">+</Button>
+        <Button Grid.Column="1" Grid.Row="5" FontFamily="Globaluserinterface" FontSize="50" Click="Five">+</Button>
+        <Button Grid.Column="1" Grid.Row="6" FontFamily="Globaluserinterface" FontSize="50" Click="TwoDollar">+</Button>
+        <Button Grid.Column="1" Grid.Row="7" FontFamily="Globaluserinterface" FontSize="50" Click="OneDollar">+</Button>
+
+        <!--Dollar - Buttons-->
+        <Button Grid.Column="3" Grid.Row="1" FontFamily="Globaluserinterface" FontSize="50" Click="MinusOneHundred">-</Button>
+        <Button Grid.Column="3" Grid.Row="2" FontFamily="Globaluserinterface" FontSize="50" Click="MinusFifty">-</Button>
+        <Button Grid.Column="3" Grid.Row="3" FontFamily="Globaluserinterface" FontSize="50" Click="MinusTwenty">-</Button>
+        <Button Grid.Column="3" Grid.Row="4" FontFamily="Globaluserinterface" FontSize="50" Click="MinusTen">-</Button>
+        <Button Grid.Column="3" Grid.Row="5" FontFamily="Globaluserinterface" FontSize="50" Click="MinusFive">-</Button>
+        <Button Grid.Column="3" Grid.Row="6" FontFamily="Globaluserinterface" FontSize="50" Click="MinusTwoDollar">-</Button>
+        <Button Grid.Column="3" Grid.Row="7" FontFamily="Globaluserinterface" FontSize="50" Click="MinusOneDollar">-</Button>
+
+        <!--Dollar From Customer-->
+        <TextBlock x:Name="onehundred" Grid.Column="2" Grid.Row="1" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=OneHundredNumber}"/>
+        <TextBlock x:Name="fifty" Grid.Column="2" Grid.Row="2" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=FiftyNumber}"/>
+        <TextBlock x:Name="twenty" Grid.Column="2" Grid.Row="3" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=TwentyNumber}"/>
+        <TextBlock x:Name="ten"  Grid.Column="2" Grid.Row="4" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=TenNumber}"/>
+        <TextBlock x:Name="five" Grid.Column="2" Grid.Row="5" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=FiveNumber}"/>
+        <TextBlock x:Name="Twodollar" Grid.Column="2" Grid.Row="6" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=TwoNumber}"/>
+        <TextBlock x:Name="onedollar" Grid.Column="2" Grid.Row="7" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=OneNumber}"/>
+        <!--Dollar Change-->
+        <TextBlock Grid.Column="4" Grid.Row="1" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=HundredChange}"/>
+        <TextBlock Grid.Column="4" Grid.Row="2" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=FiftiesChange}"/>
+        <TextBlock Grid.Column="4" Grid.Row="3" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=TwentiesChange}"/>
+        <TextBlock Grid.Column="4" Grid.Row="4" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=TensChange}"/>
+        <TextBlock Grid.Column="4" Grid.Row="5" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=FivesChange}"/>
+        <TextBlock Grid.Column="4" Grid.Row="6" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=TwosChange}"/>
+        <TextBlock Grid.Column="4" Grid.Row="7" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=OnesChange}"/>
+        <!--Coin + Buttons-->
+        <Button Grid.Column="6" Grid.Row="1" FontFamily="Globaluserinterface" FontSize="50" Click="OneCoin">+</Button>
+        <Button Grid.Column="6" Grid.Row="2" FontFamily="Globaluserinterface" FontSize="50" Click="FiftyCoin">+</Button>
+        <Button Grid.Column="6" Grid.Row="3" FontFamily="Globaluserinterface" FontSize="50" Click="TwentyFiveCoin">+</Button>
+        <Button Grid.Column="6" Grid.Row="4" FontFamily="Globaluserinterface" FontSize="50" Click="TenCoin">+</Button>
+        <Button Grid.Column="6" Grid.Row="5" FontFamily="Globaluserinterface" FontSize="50" Click="FiveCoin">+</Button>
+        <Button Grid.Column="6" Grid.Row="6" FontFamily="Globaluserinterface" FontSize="50" Click="OneCentCoin">+</Button>
+
+        <!--Coin - Buttons-->
+        <Button Grid.Column="8" Grid.Row="1" FontFamily="Globaluserinterface" FontSize="50" Click="MinusOneCoin" >-</Button>
+        <Button Grid.Column="8" Grid.Row="2" FontFamily="Globaluserinterface" FontSize="50" Click="MinusFiftyCoin">-</Button>
+        <Button Grid.Column="8" Grid.Row="3" FontFamily="Globaluserinterface" FontSize="50" Click="MinusTwentyFiveCoin">-</Button>
+        <Button Grid.Column="8" Grid.Row="4" FontFamily="Globaluserinterface" FontSize="50" Click="MinusTenCoin">-</Button>
+        <Button Grid.Column="8" Grid.Row="5" FontFamily="Globaluserinterface" FontSize="50" Click="MinusFiveCoin">-</Button>
+        <Button Grid.Column="8" Grid.Row="6" FontFamily="Globaluserinterface" FontSize="50" Click="MinusOneCentCoin">-</Button>
+
+        <!--Coin From Customer-->
+        <TextBlock Grid.Column="7" Grid.Row="1" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=OneCoinNumber}"/>
+        <TextBlock Grid.Column="7" Grid.Row="2" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=FiftyCoinNumber}"/>
+        <TextBlock Grid.Column="7" Grid.Row="3" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=TwentyFiveCoinNumber}"/>
+        <TextBlock Grid.Column="7" Grid.Row="4" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=TenCoinNumber}"/>
+        <TextBlock Grid.Column="7" Grid.Row="5" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=FiveCoinNumber}"/>
+        <TextBlock Grid.Column="7" Grid.Row="6" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=OneCentNumber}"/>
+
+        <!--Coin Change-->
+        <TextBlock Grid.Column="9" Grid.Row="1" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=DollarsChange}"/>
+        <TextBlock Grid.Column="9" Grid.Row="2" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=HalfDollarsChange}"/>
+        <TextBlock Grid.Column="9" Grid.Row="3" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=QuartersChange}"/>
+        <TextBlock Grid.Column="9" Grid.Row="4" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=DimesChange}"/>
+        <TextBlock Grid.Column="9" Grid.Row="5" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=NickelsChange}"/>
+        <TextBlock Grid.Column="9" Grid.Row="6" FontFamily="Globaluserinterface" HorizontalAlignment="Center" FontSize="50" Text="{Binding Path=PenniesChange}"/>
+
+        <!--Bottom Row-->
+        <Rectangle Grid.Row="10" Grid.Column="0"/>
+        <TextBlock Grid.Column="0" Grid.Row="10" FontFamily="Globaluserinterface" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Text="Total &#x0a; Sale "/>
+        <Rectangle Stroke="Black" StrokeThickness="1" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="10" FontFamily="Globaluserinterface" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Text="{Binding Path=Total, StringFormat={}{0:c}}"/>
+        <Rectangle Grid.Row="10" Grid.Column="3"/>
+        <TextBlock Grid.Column="3" Grid.Row="10" FontFamily="Globaluserinterface" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Text="Amount &#x0a;   Due "/>
+        <Rectangle Fill="Red" Grid.Row="10" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="10" FontFamily="Globaluserinterface" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Foreground="White" Text="{Binding Path=AmountDue, StringFormat={}{0:c}}"/>
+        <Rectangle Grid.Row="10" Grid.Column="6"/>
+        <TextBlock Grid.Column="6" Grid.Row="10" FontFamily="Globaluserinterface" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Text="Change &#x0a; Owed "/>
+        <Rectangle Fill="Green" Grid.Row="10" Grid.Column="7" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="10" FontFamily="Globaluserinterface" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Foreground="White" Text="{Binding Path=ChangeDue, StringFormat={}{0:c}}"/>
+        <Button Grid.Column="9" Grid.Row="10" FontFamily="Globaluserinterface" FontSize="14" FontWeight="Medium" Content="Finalize &#x0a;  Sale" Click="FinalizeSale"/>
+    </Grid>
+</UserControl>
