@@ -14,8 +14,6 @@ namespace PointOfSale
     /// </summary>
     public class PaymentOptionModelView: INotifyPropertyChanged
     {
-
-
         /// <summary>
         /// Propetychanged handler
         /// </summary>
