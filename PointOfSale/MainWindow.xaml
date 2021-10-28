@@ -48,7 +48,7 @@
             Select Items
         </Button>
         <!-- A button offering the user to complete their order-->
-        <Button Grid.Row="2" Grid.Column="2" Click="Complete_Click">
+        <Button x:Name="completeOrder" Grid.Row="2" Grid.Column="2" Click="Complete_Click">
             Complete Order
         </Button>
         <Border x:Name="menuItemSelection" Grid.Row="1" Grid.ColumnSpan="3">

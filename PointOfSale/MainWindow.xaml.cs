@@ -58,24 +58,7 @@ namespace PointOfSale
         /// <param name="e">The event.</param>
         private void Complete_Click(object sender, RoutedEventArgs e)
         {
-            menuItemSelection.Child = new MenuItemSelectionControl();
-            DependencyObject parent = this;
-            do
-            {
-                parent = LogicalTreeHelper.GetParent(parent);
-            }
-            while (!(parent is null || parent is MainWindow));
-
-            MainWindow nextBorder = parent as MainWindow;
-            parent = nextBorder;
-            if (sender is Button button && button.Name == "paymentmethod")
-            {
-                if (DataContext is Order)
-                {
-                    PaymentOptions temp = new PaymentOptions();
-                    nextBorder.menuItemSelection.Child = temp;
-                }
-            }
+            menuItemSelection.Child = new PaymentOptions();
         }
 
         /// <summary>

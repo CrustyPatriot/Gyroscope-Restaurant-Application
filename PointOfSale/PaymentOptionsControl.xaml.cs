@@ -101,7 +101,7 @@ namespace PointOfSale
             {
                 if (button.Name == "cash" && DataContext is Order order)
                 {
-                    CashPaymentcontrol temp = new CashPaymentcontrol();
+                    CashPaymentControl temp = new CashPaymentControl();
                     PaymentOptionModelView view = new PaymentOptionModelView();
                     temp.DataContext = view;
                     view.Order = order;
