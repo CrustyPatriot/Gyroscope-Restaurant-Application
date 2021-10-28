@@ -22,6 +22,9 @@ namespace PointOfSale
     /// </summary>
     public partial class PaymentOptions : UserControl
     {
+        /// <summary>
+        /// Initializes the payment options control.
+        /// </summary>
         public PaymentOptions()
         {
             InitializeComponent();
@@ -98,7 +101,7 @@ namespace PointOfSale
             {
                 if (button.Name == "cash" && DataContext is Order order)
                 {
-                    var temp = new CashPaymentcontrol();
+                    CashPaymentcontrol temp = new CashPaymentcontrol();
                     PaymentOptionModelView view = new PaymentOptionModelView();
                     temp.DataContext = view;
                     view.Order = order;

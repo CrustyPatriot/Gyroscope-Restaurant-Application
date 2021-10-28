@@ -9,6 +9,9 @@ using RoundRegister;
 
 namespace PointOfSale
 {
+    /// <summary>
+    /// Contains the definitions and logic for the payment.
+    /// </summary>
     public class PaymentOptionModelView: INotifyPropertyChanged
     {
 
@@ -1508,12 +1511,12 @@ namespace PointOfSale
             RecieptPrinter.PrintLine("SubTotal: " + string.Format("{0:C}", Order.Subtotal));
             RecieptPrinter.PrintLine("Tax: " + string.Format("{0:C}", Order.Tax));
             RecieptPrinter.PrintLine("Total: " + string.Format("{0:C}", Order.Total));
-            if (Cash == true)
+            if (Cash)
             {
                 RecieptPrinter.PrintLine("Payment Type: Cash");
                 RecieptPrinter.PrintLine("Change Owed: " + string.Format("{0:C}", ChangeDue));
             }
-            if (CreditDebitCard == true)
+            if (CreditDebitCard)
             {
                 RecieptPrinter.PrintLine("Payment Type: Debit/Credit");
                 RecieptPrinter.PrintLine("Change Owed: 0");

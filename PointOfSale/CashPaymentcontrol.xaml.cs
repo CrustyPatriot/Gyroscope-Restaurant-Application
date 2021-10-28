@@ -1,18 +1,7 @@
 ﻿using GyroScope.Data;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PointOfSale
 {
@@ -47,7 +36,6 @@ namespace PointOfSale
             }
         }
 
-
         /// <summary>
         /// Click Event for the Plus button
         /// </summary>
@@ -62,6 +50,7 @@ namespace PointOfSale
                 vm.FiftyNumber++;
             }
         }
+
         /// <summary>
         /// Click Event for the Plus button
         /// </summary>
@@ -76,6 +65,7 @@ namespace PointOfSale
                 vm.TwentyNumber++;
             }
         }
+
         /// <summary>
         /// Click Event for the Plus button
         /// </summary>
@@ -90,6 +80,7 @@ namespace PointOfSale
                 vm.TenNumber++;
             }
         }
+
         /// <summary>
         /// Click Event for the Plus button
         /// </summary>
@@ -104,6 +95,7 @@ namespace PointOfSale
                 vm.FiveNumber++;
             }
         }
+
         /// <summary>
         /// Click Event for the Plus button
         /// </summary>
@@ -118,6 +110,7 @@ namespace PointOfSale
                 vm.TwoNumber++;
             }
         }
+
         /// <summary>
         /// Click Event for the Plus button
         /// </summary>
