@@ -1,5 +1,6 @@
 ﻿@page
 @model IndexModel
+@using GyroScope.Data
 @{
     ViewData["Title"] = "Home page";
 }
@@ -12,31 +13,31 @@
     @foreach (var item in Menu.Entrees)
     {
         <p>@item.Name</p>
-        <p>@item.Price</p>
-        <p>@item.Calories</p>
+        <p>Price: @item.Price</p>
+        <p>Calories: @item.Calories</p>
     }
 
     <h2>Sides</h2>
     @foreach (var item in Menu.Sides)
     {
         <p>@item.Name</p>
-        <p>@item.Price</p>
-        <p>@item.Calories</p>
+        <p>Price: @item.Price</p>
+        <p>Calories: @item.Calories</p>
     }
 
     <h2>Drinks</h2>
     @foreach (var item in Menu.Drinks)
     {
         <p>@item.Name</p>
-        <p>@item.Price</p>
-        <p>@item.Calories</p>
+        <p>Price: @item.Price</p>
+        <p>Calories: @item.Calories</p>
     }
 
     <h2>Treats</h2>
     @foreach (var item in Menu.Treats)
     {
         <p>@item.Name</p>
-        <p>@item.Price</p>
-        <p>@item.Calories</p>
+        <p>Price: @item.Price</p>
+        <p>Calories: @item.Calories</p>
     }
 </div>

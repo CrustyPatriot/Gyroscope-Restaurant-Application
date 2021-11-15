@@ -1,6 +1,7 @@
 ﻿using Gyroscope.Data;
 using GyroScope.Data.Drinks;
 using GyroScope.Data.Entrees;
+using GyroScope.Data.Enums;
 using GyroScope.Data.Sides;
 using GyroScope.Data.Treats;
 using System;
@@ -23,13 +24,12 @@ namespace GyroScope.Data
         {
             get
             {
-                return new List<IMenuItem>()
-                {
-                    new LeoLambGyro(),
-                    new PiscesFishDish(),
-                    new ScorpioSpicyGyro(),
-                    new VirgoClassicGyro()
-                };
+                List<IMenuItem> list = new List<IMenuItem>();
+                list.Add(new LeoLambGyro());
+                list.Add(new PiscesFishDish());
+                list.Add(new ScorpioSpicyGyro());
+                list.Add(new VirgoClassicGyro());
+                return list;
             }
         }
 
@@ -40,13 +40,25 @@ namespace GyroScope.Data
         {
             get
             {
-                return new List<IMenuItem>()
+                var sides = new List<IMenuItem>();
+                foreach(Size size in Enum.GetValues(typeof(Size)))
                 {
-                    new AriesFries(),
-                    new GeminiStuffedGrapeLeaves(),
-                    new SagittariusGreekSalad(),
-                    new TaurusTabuleh()
-                };
+                    sides.Add(new AriesFries() { Size = size });
+                    
+                }
+                foreach(Size size in Enum.GetValues(typeof(Size)))
+                {
+                    sides.Add(new GeminiStuffedGrapeLeaves() { Size = size });
+                }
+                foreach(Size size in Enum.GetValues(typeof(Size)))
+                {
+                    sides.Add(new SagittariusGreekSalad() { Size = size });
+                }
+                foreach(Size size in Enum.GetValues(typeof(Size)))
+                {
+                    sides.Add(new TaurusTabuleh() { Size = size });
+                }
+                return sides;
             }
         }
 
@@ -57,11 +69,17 @@ namespace GyroScope.Data
         {
             get
             {
-                return new List<IMenuItem>()
+                List<IMenuItem> drinks = new List<IMenuItem>();
+
+                drinks.Add(new CapricornMountainTea());
+                foreach(LibraLibationFlavor f in Enum.GetValues(typeof(LibraLibationFlavor)))
                 {
-                    new CapricornMountainTea(),
-                    new LibraLibation()
-                };
+                    LibraLibationFlavor flavor = f;
+                    var libra = new LibraLibation();
+                    libra.Flavor = flavor;
+                    drinks.Add(libra);
+                }
+                return drinks;
             }
         }
 
@@ -72,11 +90,20 @@ namespace GyroScope.Data
         {
             get
             {
-                return new List<IMenuItem>()
+                List<IMenuItem> treats = new List<IMenuItem>();
+
+                treats.Add(new CancerHalvaCake());
+                foreach(Size size in Enum.GetValues(typeof(Size)))
                 {
-                    new AquariusIce(),
-                    new CancerHalvaCake()
-                };
+                    foreach(AquariusIceFlavor flavor in Enum.GetValues(typeof(AquariusIceFlavor))) 
+                    {
+                        var ice = new AquariusIce();
+                        ice.Size = size;
+                        ice.Flavor = flavor;
+                        treats.Add(ice);
+                    }
+                }
+                return treats;
             }
         }
     }
