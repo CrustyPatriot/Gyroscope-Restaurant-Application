@@ -77,6 +77,15 @@ namespace GyroScope.Data
                     LibraLibationFlavor flavor = f;
                     var libra = new LibraLibation();
                     libra.Flavor = flavor;
+                    libra.Sparkling = true;
+                    drinks.Add(libra);
+                }
+                foreach (LibraLibationFlavor f in Enum.GetValues(typeof(LibraLibationFlavor)))
+                {
+                    LibraLibationFlavor flavor = f;
+                    var libra = new LibraLibation();
+                    libra.Flavor = flavor;
+                    libra.Sparkling = false;
                     drinks.Add(libra);
                 }
                 return drinks;

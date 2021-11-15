@@ -12,32 +12,40 @@
     <h2>Entrees</h2>
     @foreach (var item in Menu.Entrees)
     {
+        <div class="menu-item">
         <p>@item.Name</p>
         <p>Price: @item.Price</p>
         <p>Calories: @item.Calories</p>
+    </div>
     }
 
     <h2>Sides</h2>
     @foreach (var item in Menu.Sides)
     {
+        <div class="menu-item">
         <p>@item.Name</p>
         <p>Price: @item.Price</p>
         <p>Calories: @item.Calories</p>
+     </div>
     }
 
     <h2>Drinks</h2>
     @foreach (var item in Menu.Drinks)
     {
+        <div class="menu-item">
         <p>@item.Name</p>
         <p>Price: @item.Price</p>
         <p>Calories: @item.Calories</p>
+    </div>
     }
 
     <h2>Treats</h2>
     @foreach (var item in Menu.Treats)
     {
+    <div class="menu-item">
         <p>@item.Name</p>
         <p>Price: @item.Price</p>
         <p>Calories: @item.Calories</p>
+    </div>
     }
 </div>
