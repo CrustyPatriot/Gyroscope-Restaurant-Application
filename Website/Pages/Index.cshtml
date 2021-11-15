@@ -5,6 +5,38 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Gyro Scope</h1>
+    <p>When the planets align!</p>
+
+    <h2>Entrees</h2>
+    @foreach (var item in Menu.Entrees)
+    {
+        <p>@item.Name</p>
+        <p>@item.Price</p>
+        <p>@item.Calories</p>
+    }
+
+    <h2>Sides</h2>
+    @foreach (var item in Menu.Sides)
+    {
+        <p>@item.Name</p>
+        <p>@item.Price</p>
+        <p>@item.Calories</p>
+    }
+
+    <h2>Drinks</h2>
+    @foreach (var item in Menu.Drinks)
+    {
+        <p>@item.Name</p>
+        <p>@item.Price</p>
+        <p>@item.Calories</p>
+    }
+
+    <h2>Treats</h2>
+    @foreach (var item in Menu.Treats)
+    {
+        <p>@item.Name</p>
+        <p>@item.Price</p>
+        <p>@item.Calories</p>
+    }
 </div>
