@@ -13,6 +13,11 @@ namespace GyroScope.Data
     public class Order : IMenuItem, ICollection<IMenuItem>, INotifyCollectionChanged, INotifyPropertyChanged
     {
         /// <summary>
+        /// The descripion for the menu items in the order.
+        /// </summary>
+        public string Description { get; }
+
+        /// <summary>
         /// Collection of menu items for the order.
         /// </summary>
         public List<IMenuItem> _order = new List<IMenuItem>();

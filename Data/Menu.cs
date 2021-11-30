@@ -18,6 +18,19 @@ namespace GyroScope.Data
     public static class Menu
     {
         /// <summary>
+        /// All types of menu items.
+        /// </summary>
+        public static string[] Type
+        {
+            get => new string[]
+            {
+                "Entrees",
+                "Sides",
+                "Drinks",
+                "Treats"
+            };
+        }
+        /// <summary>
         /// Contains all the entrees.
         /// </summary>
         public static IEnumerable<IMenuItem> Entrees
@@ -31,6 +44,83 @@ namespace GyroScope.Data
                 list.Add(new VirgoClassicGyro());
                 return list;
             }
+        }
+
+        /// <summary>
+        /// Searches for the specific menu item.
+        /// </summary>
+        /// <param name="items">The list of menu items.</param>
+        /// <param name="names">THe name of the menu items.</param>
+        /// <returns>
+        /// Returns the list of menu items.
+        /// </returns>
+        public static IEnumerable<IMenuItem> Search(IEnumerable<IMenuItem> items, string names)
+        {
+            List<IMenuItem> resultList = new List<IMenuItem>();
+            if (names != null)
+            {
+                
+                foreach(IMenuItem menuItem in items)
+                {
+                    if (menuItem != null && menuItem.Name.Contains(names, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        resultList.Add(menuItem);
+                    }
+                    else if (menuItem.Description != null && menuItem.Description.Contains(names, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        resultList.Add(menuItem);
+                    }
+                }
+            }
+            return resultList;
+        }
+
+        /// <summary>
+        /// A filter to add a specific type of menu item.
+        /// </summary>
+        /// <param name="items">The list of items.</param>
+        /// <param name="itemType">The type of item.</param>
+        /// <returns>
+        /// Returns a list of items.
+        /// </returns>
+        public static IEnumerable<IMenuItem> TypeFilter(IEnumerable<IMenuItem> items, IEnumerable<string> itemType)
+        {
+            if (itemType == null || itemType.Count() == 0)
+            {
+                return items;
+            }
+
+            List<IMenuItem> resultList = new List<IMenuItem>();
+
+            if (itemType.Contains("Entrees"))
+            {
+                foreach(IMenuItem item in items)
+                {
+                    resultList.Add(item);
+                }
+            }
+            if (itemType.Contains("Sides"))
+            {
+                foreach(IMenuItem item in items)
+                {
+                    resultList.Add(item);
+                }
+            }
+            if (itemType.Contains("Drinks"))
+            {
+                foreach(IMenuItem item in items)
+                {
+                    resultList.Add(item);
+                }
+            }
+            if (itemType.Contains("Treats"))
+            {
+                foreach(IMenuItem item in items) 
+                {
+                    resultList.Add(item);
+                }
+            }
+            return resultList;
         }
 
         /// <summary>

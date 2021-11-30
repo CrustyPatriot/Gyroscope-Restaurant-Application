@@ -12,6 +12,12 @@ a {
   color: #0366d6;
 }
 
+#search {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: left;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;

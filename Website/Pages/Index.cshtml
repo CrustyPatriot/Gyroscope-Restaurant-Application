@@ -9,6 +9,23 @@
     <h1 class="display-4">Gyro Scope</h1>
     <p>When the planets align!</p>
 
+    <div id="filters">
+        <div id="search">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms"/>
+            <input type="submit" value="Search"/>
+        </div>
+    </div>
+
+    <h2>
+        @foreach(String itemType in GyroScope.Data.Menu.Type)
+            {
+                <label>
+                    <input type="checkbox" name="Item Type" value="@itemType" checked="@Model.Type.Contains(itemType)"/>
+                    @itemType
+                </label>
+            }
+    </h2>
+
     <h2>Entrees</h2>
     @foreach (var item in Menu.Entrees)
     {

@@ -18,9 +18,18 @@ namespace Website.Pages
             _logger = logger;
         }
 
+        public IEnumerable<IMenuItem> Items { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerms { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string[] Type { get; set; }
+
         public void OnGet()
         {
-
+            Items = GyroScope.Data.Menu.Search(Items, SearchTerms);
+            Items = GyroScope.Data.Menu.TypeFilter(Items, Type);
         }
     }
 }
