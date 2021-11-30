@@ -14,6 +14,10 @@ namespace GyroScope.Data.Treats
     /// </summary>
     public class AquariusIce : Treat, INotifyPropertyChanged, IMenuItem
     {
+        /// <summary>
+        /// The description of the Aquarius Ice treat.
+        /// </summary>
+        public override string Description => "Italian flavored ices, the coolest treat you can eat with a spoon!";
 
         /// <summary>
         /// Override to string method to be correct for the menu item.

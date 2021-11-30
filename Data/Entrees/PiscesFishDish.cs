@@ -36,6 +36,11 @@ namespace GyroScope.Data.Entrees
         }
 
         /// <summary>
+        /// The description of the Pisces Fish Dish.
+        /// </summary>
+        public override string Description => "Halibut baked with onions and tomatoes in a red wine sauce";
+
+        /// <summary>
         /// The name of the dish.
         /// </summary>
         public override string Name => "Pisces Fish Dish";

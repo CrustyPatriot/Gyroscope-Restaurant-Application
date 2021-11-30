@@ -25,6 +25,11 @@ namespace GyroScope.Data.Entrees
         public override uint Calories { get; }
 
         /// <summary>
+        /// The description of the specific menu item.
+        /// </summary>
+        public override string Description { get; }
+
+        /// <summary>
         /// Backing field for the meat property.
         /// </summary>
         public DonerMeat _meat;

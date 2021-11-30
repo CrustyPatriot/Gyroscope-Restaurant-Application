@@ -28,6 +28,11 @@ namespace GyroScope.Data.Entrees
         }
 
         /// <summary>
+        /// The description of the Virgo Classic Gyro.
+        /// </summary>
+        public override string Description => "The classic American gyro - seasoned doner pork, fresh sliced tomato, diced onion, shredded lettuce, and tzatziki sauce, wrapped in a warm flaky pita.";
+
+        /// <summary>
         /// Override to string method to be correct for the menu item.
         /// </summary>
         /// <returns>

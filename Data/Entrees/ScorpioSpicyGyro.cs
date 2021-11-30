@@ -28,6 +28,11 @@ namespace GyroScope.Data.Entrees
         }
 
         /// <summary>
+        /// The description of the Scorpio Spicy Gyro.
+        /// </summary>
+        public override string Description => "A gyro with a spicy twist - seasoned doner chicken, steamed peppers, chopped onions, and shredded lettuce topped with hot wing sauce and wrapped in a warm pita.";
+
+        /// <summary>
         /// Override to string method to be correct for the menu item.
         /// </summary>
         /// <returns>

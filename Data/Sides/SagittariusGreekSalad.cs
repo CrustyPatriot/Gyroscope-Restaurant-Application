@@ -14,6 +14,10 @@ namespace GyroScope.Data.Sides
     /// </summary>
     public class SagittariusGreekSalad : Side, INotifyPropertyChanged, IMenuItem
     {
+        /// <summary>
+        /// The description of the Sagittarius Greek Salad.
+        /// </summary>
+        public override string Description => "	A fresh salad of sliced cucumbers, tomatoes, peppers, onion, olives, and feta cheese.";
 
         /// <summary>
         /// Override to string method to be correct for the menu item.

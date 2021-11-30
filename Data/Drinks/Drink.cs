@@ -16,6 +16,11 @@ namespace GyroScope.Data.Drinks
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// The description of a specific drink.
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
         /// The price of the drink.
         /// </summary>
         public abstract decimal Price { get; }

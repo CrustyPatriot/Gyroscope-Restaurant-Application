@@ -13,6 +13,10 @@ namespace GyroScope.Data.Treats
     /// </summary>
     public class CancerHalvaCake : Treat, IMenuItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The description of the Cancer Halva Cake treat.
+        /// </summary>
+        public override string Description => "A gluten-free cake made from sesame seeds";
 
         /// <summary>
         /// Override to string method to be correct for the menu item.

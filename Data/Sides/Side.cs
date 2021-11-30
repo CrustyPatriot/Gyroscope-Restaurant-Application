@@ -44,6 +44,11 @@ namespace GyroScope.Data.Sides
         }
 
         /// <summary>
+        /// The description of the specific side menu item.
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
         /// The price of the side.
         /// </summary>
         public abstract decimal Price { get; }

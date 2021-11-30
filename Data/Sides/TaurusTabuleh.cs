@@ -14,6 +14,10 @@ namespace GyroScope.Data.Sides
     /// </summary>
     public class TaurusTabuleh : Side, INotifyPropertyChanged, IMenuItem
     {
+        /// <summary>
+        /// The description of the Taurus Tabuleh side dish.
+        /// </summary>
+        public override string Description => "A bulgar salad rife with fresh herbs and lemon.";
 
         /// <summary>
         /// Override to string method to be correct for the menu item.

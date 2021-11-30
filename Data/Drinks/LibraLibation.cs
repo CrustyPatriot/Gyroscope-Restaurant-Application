@@ -14,6 +14,10 @@ namespace GyroScope.Data.Drinks
     /// </summary>
     public class LibraLibation : Drink, INotifyPropertyChanged, IMenuItem
     {
+        /// <summary>
+        /// The description of the Libra Libation drink.
+        /// </summary>
+        public override string Description => "Real imported sparkling or still Greek sodas in a variety of flavors.";
 
         /// <summary>
         /// Override to string method to be correct for the menu item.

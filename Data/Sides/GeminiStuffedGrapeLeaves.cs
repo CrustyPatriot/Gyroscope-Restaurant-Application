@@ -14,6 +14,10 @@ namespace GyroScope.Data.Sides
     /// </summary>
     public class GeminiStuffedGrapeLeaves : Side, INotifyPropertyChanged, IMenuItem
     {
+        /// <summary>
+        /// The description of the Gemini Stuffed Grape Leaves.
+        /// </summary>
+        public override string Description => "Grape leaves stuffed with spiced meat and rice.";
 
         /// <summary>
         /// Override to string method to be correct for the menu item.

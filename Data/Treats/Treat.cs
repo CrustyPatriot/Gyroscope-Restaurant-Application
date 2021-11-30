@@ -20,6 +20,11 @@ namespace GyroScope.Data.Treats
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// The description of a specific treat.
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
         /// The price of the treat.
         /// </summary>
         public abstract decimal Price { get; }

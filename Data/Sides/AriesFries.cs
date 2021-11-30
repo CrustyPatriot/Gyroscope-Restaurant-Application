@@ -14,6 +14,10 @@ namespace GyroScope.Data.Sides
     /// </summary>
     public class AriesFries : Side, INotifyPropertyChanged, IMenuItem
     {
+        /// <summary>
+        /// The description of the Aries Fries.
+        /// </summary>
+        public override string Description => "Crispy fried potatoes topped with feta cheese, onions, and herbs.";
 
         /// <summary>
         /// Override to string method to be correct for the menu item.

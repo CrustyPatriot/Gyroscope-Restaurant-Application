@@ -13,6 +13,10 @@ namespace GyroScope.Data.Drinks
     /// </summary>
     public class CapricornMountainTea : Drink, INotifyPropertyChanged, IMenuItem
     {
+        /// <summary>
+        /// The description of the Capricorn Mountain Tea drink.
+        /// </summary>
+        public override string Description => "Tea brewed from the ironwort plant, a traditional herbal health enhancer.";
 
         /// <summary>
         /// Override to string method to be correct for the menu item.

@@ -29,6 +29,11 @@ namespace GyroScope.Data.Entrees
         }
 
         /// <summary>
+        /// The description of the Leo Lamb Gyro.
+        /// </summary>
+        public override string Description => "	A fresh take on the gyro - seasoned doner lamb, fresh sliced tomato, diced onion, steamed eggplant, and shredded lettuce, smothered in mint chutney and served in a pita.";
+
+        /// <summary>
         /// Override to string method to be correct for the menu item.
         /// </summary>
         /// <returns>
